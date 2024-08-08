@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import MyTitle from "../components/MyTitle.astro";
 ---
 
 <Layout title="Welcome to Garci">
-  <main>
+  <main class="p-4 w-[800px] max-w-[calc(100% - 2rem)] text-white text-xl">
     <svg
-      class="astro-a"
+      class="absolute -top-8 left-1/2 -translate-x-1/2 w-56 -z-10"
       width="495"
       height="623"
       viewBox="0 0 495 623"
@@ -33,7 +34,7 @@ import Card from "../components/Card.astro";
         </linearGradient>
       </defs>
     </svg>
-    <h1>Welcome <span class="text-gradient">to Garci</span></h1>
+    <MyTitle title="Welcome to Garci" />
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br
       />
@@ -65,31 +66,6 @@ import Card from "../components/Card.astro";
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
