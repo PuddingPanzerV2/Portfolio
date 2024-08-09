@@ -6,12 +6,14 @@
     top: 20vh;
     width: 100%;
     z-index: 50;
-    background-color: #2d3748 opacity-100; /* Tailwind bg-gray-800 */
+    background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
     color: white;
     padding: 0rem;
     transition:
       background-color 0.3s ease,
-      color 0.3s ease;
+      color 0.3s ease,
+      box-shadow 0.3s ease,
+      border-bottom 0.3s ease; /* Transition for shadow and border */
   }
 
   .sticky-nav.sticky {
@@ -19,6 +21,8 @@
     top: 0;
     background-color: white; /* Change to white when sticky */
     color: black; /* Text color change for visibility */
+    border-bottom: 3px solid black; /* Thicker black border at the bottom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
   }
 
   .nav-item {
@@ -115,60 +119,178 @@
 </div>
 
 <div class="relative z-30 bg-white" style="top: -8vh">
-  <div class="p-8">
-    <p class="text-gray-700 text-9xl">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-      doloremque unde. Aliquid reiciendis, saepe consequatur ratione repellendus
-      obcaecati, debitis ex molestias aut impedit ipsum tempora tempore
-      blanditiis odio dolore maiores.
+  <div class="pl-2">
+    <p class="text-gray-700 text-6xl italic font-black">
+      WHO AM I AND WTF DO I DO?
     </p>
-    <p class="text-gray-700 text-9xl">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-      doloremque unde. Aliquid reiciendis, saepe consequatur ratione repellendus
-      obcaecati, debitis ex molestias aut impedit ipsum tempora tempore
-      blanditiis odio dolore maiores.
+    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
+      Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Aspernatur, doloremque unde.
+      Aliquid reiciendis, saepe consequatur ratione repellendus obcaecati,
+      debitis ex molestias aut impedit ipsum tempora tempore blanditiis odio
+      dolore maiores. <br />
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
+      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
+      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
+      qui.
     </p>
   </div>
 </div>
 
-<script>
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", function () {
-      const navbar = document.querySelector(".sticky-nav");
-      const stickyOffset = window.innerHeight * 0.25;
+<div class="relative my-10 z-30 bg-white" style="top: -8vh">
+  <div class="pl-2">
+    <p class="text-gray-700 text-6xl italic font-black">
+      LALALA LULULU ICH LOS DE TEIL MOL VO SUPERMAVEN USFÜLLE
+    </p>
+    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
+      Supermaven write me scrollcontents scrollcontents scrollcontents er het
+      scho abkackt. also mit eif text ischer müll hahahahahhaha ich gang wieder
+      zrug ufs guete alte Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Quidem tempore ipsum repellendus eum ab eius libero doloremque
+      aliquid recusandae laborum, consequuntur nulla consequatur natus,
+      excepturi deleniti totam reprehenderit iusto similique!
+      <br />
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
+      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
+      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
+      qui.
+    </p>
+  </div>
+</div>
 
-      if (window.scrollY >= stickyOffset) {
-        navbar.classList.add("sticky");
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    });
+<div class="relative z-30 bg-white" style="top: -8vh">
+  <div class="pl-2">
+    <p class="text-gray-700 text-6xl italic font-black">
+      SO ICH SOETT EIG SCHOLANG PENNE
+    </p>
+    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
+      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird
+      And if that mockingbird won't sing, Papa's gonna buy you a diamond ring
+      And if that diamond ring turns brass, Papa's gonna buy you a looking glass
+      And if that looking glass gets broke, Papa's gonna buy you a billy goat
+      And if that billy goat won't pull, Papa's gonna buy you a cart and bull
+      And if that cart and bull turn over, Papa's gonna buy you a dog named
+      Rover And if that dog named Rover won't bark Papa's gonna buy you a horse
+      and cart And if that horse and cart fall down, You'll still be the
+      sweetest little baby in town.<br />
+      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird And
+      if that mockingbird won't sing, Papa's gonna buy you a diamond ring And if
+      that diamond ring turns brass, Papa's gonna buy you a looking glass And if
+      that looking glass gets broke, Papa's gonna buy you a billy goat And if that
+      billy goat won't pull, Papa's gonna buy you a cart and bull And if that cart
+      and bull turn over, Papa's gonna buy you a dog named Rover And if that dog
+      named Rover won't bark Papa's gonna buy you a horse and cart And if that horse
+      and cart fall down, You'll still be the sweetest little baby in town.
+    </p>
+    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
+      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird
+      And if that mockingbird won't sing, Papa's gonna buy you a diamond ring
+      And if that diamond ring turns brass, Papa's gonna buy you a looking glass
+      And if that looking glass gets broke, Papa's gonna buy you a billy goat
+      And if that billy goat won't pull, Papa's gonna buy you a cart and bull
+      And if that cart and bull turn over, Papa's gonna buy you a dog named
+      Rover And if that dog named Rover won't bark Papa's gonna buy you a horse
+      and cart And if that horse and cart fall down, You'll still be the
+      sweetest little baby in town.<br />
+      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird And
+      if that mockingbird won't sing, Papa's gonna buy you a diamond ring And if
+      that diamond ring turns brass, Papa's gonna buy you a looking glass And if
+      that looking glass gets broke, Papa's gonna buy you a billy goat And if that
+      billy goat won't pull, Papa's gonna buy you a cart and bull And if that cart
+      and bull turn over, Papa's gonna buy you a dog named Rover And if that dog
+      named Rover won't bark Papa's gonna buy you a horse and cart And if that horse
+      and cart fall down, You'll still be the sweetest little baby in town.
+    </p>
+    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
+      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird
+      And if that mockingbird won't sing, Papa's gonna buy you a diamond ring
+      And if that diamond ring turns brass, Papa's gonna buy you a looking glass
+      And if that looking glass gets broke, Papa's gonna buy you a billy goat
+      And if that billy goat won't pull, Papa's gonna buy you a cart and bull
+      And if that cart and bull turn over, Papa's gonna buy you a dog named
+      Rover And if that dog named Rover won't bark Papa's gonna buy you a horse
+      and cart And if that horse and cart fall down, You'll still be the
+      sweetest little baby in town.<br />
+      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird And
+      if that mockingbird won't sing, Papa's gonna buy you a diamond ring And if
+      that diamond ring turns brass, Papa's gonna buy you a looking glass And if
+      that looking glass gets broke, Papa's gonna buy you a billy goat And if that
+      billy goat won't pull, Papa's gonna buy you a cart and bull And if that cart
+      and bull turn over, Papa's gonna buy you a dog named Rover And if that dog
+      named Rover won't bark Papa's gonna buy you a horse and cart And if that horse
+      and cart fall down, You'll still be the sweetest little baby in town.
+    </p>
+  </div>
+</div>
 
-    const title = document.getElementById("title");
+<div class="relative my-10 z-30 bg-white" style="top: -8vh">
+  <div class="pl-2">
+    <p class="text-gray-700 text-6xl italic font-black">
+      LALALA LULULU ICH LOS DE TEIL MOL VO SUPERMAVEN SCHRIBE
+    </p>
+    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
+      Supermaven write me scrollcontents scrollcontents scrollcontents er het
+      scho abkackt. also mit eif text ischer müll hahahahahhaha ich gang wieder
+      zrug ufs guete alte Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Quidem tempore ipsum repellendus eum ab eius libero doloremque
+      aliquid recusandae laborum, consequuntur nulla consequatur natus,
+      excepturi deleniti totam reprehenderit iusto similique!
+      <br />
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
+      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
+      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
+      qui.
+    </p>
+  </div>
+</div>
 
-    const updateTitleSize = () => {
-      const maxFontSize = 14; // Maximum font size in rem
-      const minMargin = 20; // Minimum margin in pixels
+<div class="relative z-30 bg-red" style="top: -6vh">
+  <div>
+    <a
+      class="flex text-[#0000EE] mix-blend-difference underline blue justify-center items-center text-6xl"
+      href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      >TOTALLY TRUSTWORTHY LINK</a
+    >
+  </div>
+  <script>
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".sticky-nav");
+        const stickyOffset = window.innerHeight * 0.25;
 
-      // Calculate available width with minimum margin
-      const availableWidth = window.innerWidth - 2 * minMargin;
+        if (window.scrollY >= stickyOffset) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      });
 
-      // Calculate the actual width the title takes at max font size
-      title.style.fontSize = maxFontSize + "rem";
-      const actualWidth = title.scrollWidth;
+      const title = document.getElementById("title");
 
-      if (actualWidth > availableWidth) {
-        // If the title exceeds available width, scale it down
-        const scaleFactor = availableWidth / actualWidth;
-        title.style.fontSize = maxFontSize * scaleFactor + "rem";
-      } else {
-        // Ensure title is at max size if it fits
+      const updateTitleSize = () => {
+        const maxFontSize = 14; // Maximum font size in rem
+        const minMargin = 20; // Minimum margin in pixels
+
+        // Calculate available width with minimum margin
+        const availableWidth = window.innerWidth - 2 * minMargin;
+
+        // Calculate the actual width the title takes at max font size
         title.style.fontSize = maxFontSize + "rem";
-      }
-    };
+        const actualWidth = title.scrollWidth;
 
-    window.addEventListener("resize", updateTitleSize);
-    window.addEventListener("load", updateTitleSize);
-    updateTitleSize();
-  }
-</script>
+        if (actualWidth > availableWidth) {
+          // If the title exceeds available width, scale it down
+          const scaleFactor = availableWidth / actualWidth;
+          title.style.fontSize = maxFontSize * scaleFactor + "rem";
+        } else {
+          // Ensure title is at max size if it fits
+          title.style.fontSize = maxFontSize + "rem";
+        }
+      };
+
+      window.addEventListener("resize", updateTitleSize);
+      window.addEventListener("load", updateTitleSize);
+      updateTitleSize();
+    }
+  </script>
+</div>
