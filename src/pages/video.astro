@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Liste deiner Videos mit Titel und Video-ID
+const lululululu = [
+  { b: "Keynote (Google I/O '18)", a: "ogfYd705cRs" },
+  { b: "Your Second Video", a: "dQw4w9WgXcQ" },
+  { b: "Your Second Video", a: "dQw4w9WgXcQ" },
+  { a: "asdfasdf", b: "Der Titel des Videos" },
+  // Füge hier weitere Videos hinzu
+];
+---
+
+<Layout title="My Video Portfolio">
+  <div class="min-h-screen"></div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+    {
+      lululululu.map((ding_in_meiner_list) => (
+        <div class="bg-white shadow-md overflow-hidden">
+          <lite-youtube
+            videoid={ding_in_meiner_list.a}
+            playlabel={`Play: ${ding_in_meiner_list.b}`}
+          />
+          <div class="text-slate-700 p-4">
+            <h2 class="text-xl font-semibold">{ding_in_meiner_list.b}</h2>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="min-h-screen"></div>
+  <div class="min-h-screen"></div>
+  <div class="min-h-screen"></div>
+</Layout>

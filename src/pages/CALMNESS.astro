@@ -1,3 +1,11 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@1.4.0/dist/lite-yt-embed.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@1.4.0/dist/lite-yt-embed.js"
+  defer></script>
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
@@ -66,6 +74,16 @@
     top: 5vh; /* Move the title down by 10% of the viewport height */
     position: relative; /* Relative positioning to allow top adjustment */
   }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .z-[100] {
+    position: relative;
+    z-index: 100; /* High z-index to ensure visibility */
+  }
 </style>
 
 <!-- New "My Work" title -->
@@ -114,15 +132,13 @@
     class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
     id="title"
   >
-    INSANE BRAIN
+    CALMNESS
   </h1>
 </div>
 
 <div class="relative z-30 bg-white" style="top: -8vh">
   <div class="pl-2">
-    <p class="text-gray-700 text-6xl italic font-black">
-      WHO AM I AND WTF DO I DO?
-    </p>
+    <p class="text-gray-700 text-6xl italic font-black">CALM DOWN</p>
     <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
       Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor
       sit amet consectetur adipisicing elit.<span class="text-red-800"
@@ -142,14 +158,23 @@
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
       quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
       incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
-      qui. <br />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
-      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
-      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
       qui.
     </p>
+
+    <lite-youtube videoid="oBdMm9TgjAFk" playlabel="Play Video"></lite-youtube>
   </div>
 </div>
+
+<iframe
+  class="flex z-[100]"
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/BdMm9TgjAFk"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen></iframe>
 
 <div class="relative my-10 z-30 bg-white" style="top: -8vh">
   <div class="pl-2">
@@ -266,45 +291,49 @@
       >TOTALLY TRUSTWORTHY LINK</a
     >
   </div>
-  <script>
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".sticky-nav");
-        const stickyOffset = window.innerHeight * 0.25;
-
-        if (window.scrollY >= stickyOffset) {
-          navbar.classList.add("sticky");
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      });
-
-      const title = document.getElementById("title");
-
-      const updateTitleSize = () => {
-        const maxFontSize = 14; // Maximum font size in rem
-        const minMargin = 20; // Minimum margin in pixels
-
-        // Calculate available width with minimum margin
-        const availableWidth = window.innerWidth - 2 * minMargin;
-
-        // Calculate the actual width the title takes at max font size
-        title.style.fontSize = maxFontSize + "rem";
-        const actualWidth = title.scrollWidth;
-
-        if (actualWidth > availableWidth) {
-          // If the title exceeds available width, scale it down
-          const scaleFactor = availableWidth / actualWidth;
-          title.style.fontSize = maxFontSize * scaleFactor + "rem";
-        } else {
-          // Ensure title is at max size if it fits
-          title.style.fontSize = maxFontSize + "rem";
-        }
-      };
-
-      window.addEventListener("resize", updateTitleSize);
-      window.addEventListener("load", updateTitleSize);
-      updateTitleSize();
-    }
-  </script>
 </div>
+<script>
+  // Check if the window object is defined to run the script
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", function () {
+      const liteYTEmbed = document.querySelector("lite-youtube");
+      if (liteYTEmbed) {
+        // Initialize the Lite YouTube Embed if necessary
+        // This is usually not needed if you use the <lite-youtube> tag correctly
+      }
+    });
+
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".sticky-nav");
+      const stickyOffset = window.innerHeight * 0.25;
+
+      if (window.scrollY >= stickyOffset) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    });
+
+    const title = document.getElementById("title");
+    const updateTitleSize = () => {
+      const maxFontSize = 14; // Maximum font size in rem
+      const minMargin = 20; // Minimum margin in pixels
+      const availableWidth = window.innerWidth - 2 * minMargin; // Calculate available width with minimum margin
+      title.style.fontSize = maxFontSize + "rem";
+      const actualWidth = title.scrollWidth;
+
+      // If the title exceeds available width, scale it down
+      if (actualWidth > availableWidth) {
+        const scaleFactor = availableWidth / actualWidth;
+        title.style.fontSize = maxFontSize * scaleFactor + "rem";
+      } else {
+        // Ensure title is at max size if it fits
+        title.style.fontSize = maxFontSize + "rem";
+      }
+    };
+
+    window.addEventListener("resize", updateTitleSize);
+    window.addEventListener("load", updateTitleSize);
+    updateTitleSize();
+  }
+</script>
