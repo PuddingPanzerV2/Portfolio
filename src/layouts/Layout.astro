@@ -4,6 +4,14 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import MyLink from "../components/MyLink.astro";
+
+const myLinks = [
+  { title: "CALMNESS", href: "/CALMNESS" },
+  { title: "DESTRUCTION", href: "/DESTRUCTION" },
+  { title: "EXPERIMENTAL", href: "/EXPERIMENTAL" },
+];
 ---
 
 <!doctype html>
@@ -32,77 +40,27 @@ const { title } = Astro.props;
       class="sticky top-0 w-full z-50 bg-gray-800 text-white transition-colors duration-300 ease-in-out"
     >
       <ul class="flex justify-between items-center w-full">
-        <li
-          class="font-bold text-2xl flex-1 flex justify-center items-center h-24"
-        >
-          <a
-            href="/CALMNESS"
-            class="transition-colors duration-300 ease-in-out text-center hover:text-[#ff2300]"
-          >
-            CALMNESS
-          </a>
-        </li>
-        <li
-          class="font-bold text-2xl flex-1 flex justify-center items-center h-24"
-        >
-          <a
-            href="/DESTRUCTION"
-            class="transition-colors duration-300 ease-in-out text-center hover:text-[#ff2300]"
-          >
-            DESTRUCTION
-          </a>
-        </li>
-        <li
-          class="font-bold text-2xl flex-1 flex justify-center items-center h-24"
-        >
-          <a
-            href="/EXPERIMENTAL"
-            class="transition-colors duration-300 ease-in-out text-center hover:text-[#ff2300]"
-          >
-            EXPERIMENTAL
-          </a>
-        </li>
-        <li
-          class="font-bold text-2xl flex-1 flex justify-center items-center h-24"
-        >
-          <a
-            href="/3D-ANIMATIONS-AND-VISUALS"
-            class="transition-colors duration-300 ease-in-out text-center hover:text-[#ff2300]"
-          >
-            <span>3D ANIMATIONS</span>
-            <span>& VISUALS</span>
-          </a>
-        </li>
-        <li
-          class="font-bold text-2xl flex-1 flex justify-center items-center h-24"
-        >
-          <a
-            href="/MADE-ON-AND-WITH-THE-PHONE"
-            class="transition-colors duration-300 ease-in-out text-center hover:text-[#ff2300]"
-          >
-            <span>MADE WITH &</span>
-            <span>ON THE PHONE</span>
-          </a>
-        </li>
+        {myLinks.map((x) => <MyLink title={x.title} href={x.href} />)}
       </ul>
+
+      <slot />
+
+      <footer class="bg-gray-800 text-white">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-gray-400 text-sm">
+            Made with ❤️ by
+            <a class="underline" href="https://twitter.com/johannesjo"
+              >Johannes</a
+            >
+          </p>
+        </div>
+      </footer>
+
+      <script
+        is:inline
+        src="node_modules/lite-youtube-embed/src/lite-yt-embed.js"></script>
     </nav>
-
-    <h1>This title is on every page</h1>
-    <slot />
-
-    <footer class="bg-gray-800 text-white">
-      <div
-        class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
-      >
-        <p class="text-gray-400 text-sm">
-          Made with ❤️ by
-          <a class="underline" href="https://twitter.com/johannesjo">Johannes</a
-          >
-        </p>
-      </div>
-    </footer>
-
-    <script is:inline src="node_modules/lite-youtube-embed/src/lite-yt-embed.js"
-    ></script>
   </body>
 </html>
