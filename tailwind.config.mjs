@@ -9,6 +9,10 @@ export default {
         sans: ["Roboto"],
         mono: ["Bebas Neue"],
       },
+      fontSize: {
+        xxs: "0.5rem",
+        mega: ["14rem", "25rem"],
+      },
     },
   },
   plugins: [],
