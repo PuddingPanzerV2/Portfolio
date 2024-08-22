@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  hosted_video_url: string;
+  youtube_url: string;
+  description: string;
+}
+
+const { title, hosted_video_url, youtube_url, description } = Astro.props;
+---
+
+<div class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0">
+  <!-- Adjust the structure slightly without changing the layout -->
+  <div class="relative flex w-full h-full">
+    <!-- Video Container -->
+    <video class="w-full object-cover z-20" autoplay muted loop>
+      <source src={hosted_video_url} type="video/mp4" />
+    </video>
+    <!-- Invisible link overlay that covers the entire video -->
+    <a
+      href={youtube_url}
+      class="absolute inset-0 z-30"
+      style="background: rgba(0,0,0,0);"
+      target="_blank"
+      rel="noopener noreferrer"></a>
+
+    <!-- Text overlay with blending modes -->
+    <p
+      class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
+    >
+      {title}
+    </p>
+    <p
+      class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
+    >
+      {title}
+    </p>
+  </div>
+
+  <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
+  <p class="text-gray-700 text-center py-2">Click on the video to watch</p>
+
+  <div class="relative z-40">
+    <!-- Adjust z-index here -->
+    <div class="flex flex-col bg-white w-full">
+      <p class="text-gray-700 text-2xl">
+        {description}
+      </p>
+    </div>
+  </div>
+</div>
