@@ -1,10 +1,73 @@
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@1.4.0/dist/lite-yt-embed.css"
-/>
-<script
-  src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@1.4.0/dist/lite-yt-embed.js"
-  defer></script>
+---
+import Video from "../components/Video.astro";
+
+const videos = [
+  {
+    title: "MUTTENALP",
+    youtube_url: "https://www.youtube.com/watch?v=iEScntxKfHc&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Muttenalp.webm",
+    description:
+      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "ALICANTE",
+    youtube_url: "https://www.youtube.com/watch?v=3hW7AbfMBqI&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ALICANTE.webm",
+    description:
+      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "MATEC x DRIFTANIC",
+    youtube_url: "https://www.youtube.com/watch?v=gMvDwypLNLM&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/MATEC%20x%20DRIFTANIC%20v3.0%20Volvo%20945.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "TENERIFE",
+    youtube_url: "https://www.youtube.com/watch?v=GY9u90LHCnQ&vq=hd1080",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Tenerife.mp4",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "CONDENSATION [7]",
+    youtube_url: "https://www.youtube.com/watch?v=Jy_G2DbyrEI&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Condensation%20%5B7%5D.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "ANDERMATT // GEMSSTOCK",
+    youtube_url: "https://www.youtube.com/watch?v=J9KUrYSbrtE&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Andermatt%20Gemsstock.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "SOMEWHERE",
+    youtube_url: "https://www.youtube.com/watch?v=VPzKhhH16F0&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SOMEWHERE.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "OUR CHRISTMAS",
+    youtube_url: "https://www.youtube.com/watch?v=kZADnEeXTFA&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Our%20Christmas.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+];
+---
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -137,776 +200,52 @@
 </div>
 
 <div>
-  <div class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0">
-    <!-- Adjust the structure slightly without changing the layout -->
-    <div class="relative flex w-full h-full">
-      <!-- Video Container -->
-      <video class="w-full object-cover z-20" autoplay muted loop>
-        <source
-          src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Muttenalp.webm"
-          type="video/webm"
-        />
-      </video>
-      <!-- Invisible link overlay that covers the entire video -->
-      <a
-        href="https://www.youtube.com/watch?v=iEScntxKfHc&vq=hd2160"
-        class="absolute inset-0 z-30"
-        style="background: rgba(0,0,0,0);"
-        target="_blank"
-        rel="noopener noreferrer"></a>
-
-      <!-- Text overlay with blending modes -->
-      <p
-        class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-      >
-        MUTTENALP
-      </p>
-      <p
-        class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-      >
-        MUTTENALP
-      </p>
-    </div>
-
-    <div class="relative z-40 p-1 pb-8">
-      <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-      <div class="w-full pl-8 bg-white">
-        <p class="text-gray-700 text-left text-1xl">
-          Click on the video to watch
-        </p>
-      </div>
-    </div>
-
-    <div class="relative z-40">
-      <!-- Adjust z-index here -->
-      <div class="flex flex-col bg-white w-full">
-        <p class="text-gray-700 text-2xl">
-          Videobeschribig do ahne. Hello I'm at least way to fuul zum was
-          schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing
-          elit.
-          <span class="text-red-800">pls scroll...</span> Aspernatur, doloremque
-          unde. Aliquid reiciendis, saepe consequatur ratione repellendus obcaecati,
-          debitis ex molestias aut impedit ipsum tempora tempore blanditiis odio
-          dolore maiores.
-          <br />
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit
-          cupiditate, quia voluptatibus reprehenderit quam. Neque dolores error officia
-          reprehenderit incidunt unde deleniti, commodi veritatis. Vero perferendis
-          recusandae illo qui. <br />
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit
-          cupiditate, quia voluptatibus reprehenderit quam. Neque dolores error officia
-          reprehenderit incidunt unde deleniti, commodi veritatis. Vero perferendis
-          recusandae illo qui.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0">
-      <!-- Adjust the structure slightly without changing the layout -->
-      <div class="relative flex w-full h-full">
-        <!-- Video Container -->
-        <video class="w-full object-cover z-20" autoplay muted loop>
-          <source
-            src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ALICANTE.webm"
-            type="video/webm"
-          />
-        </video>
-        <!-- Invisible link overlay that covers the entire video -->
-        <a
-          href="https://www.youtube.com/watch?v=3hW7AbfMBqI&vq=hd2160"
-          class="absolute inset-0 z-30"
-          style="background: rgba(0,0,0,0);"
-          target="_blank"
-          rel="noopener noreferrer"></a>
-
-        <!-- Text overlay with blending modes -->
-        <p
-          class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-        >
-          ALICANTE
-        </p>
-        <p
-          class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-        >
-          ALICANTE
-        </p>
-      </div>
-
-      <div class="relative z-40 p-1 pb-8">
-        <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-        <div class="w-full pl-8 bg-white">
-          <p class="text-gray-700 text-left text-1xl">
-            Click on the video to watch
-          </p>
-        </div>
-      </div>
-
-      <div class="relative z-40">
-        <!-- Adjust z-index here -->
-        <div class="flex flex-col bg-white w-full">
-          <p class="text-gray-700 text-2xl">
-            Videobeschribig do ahne. Hello I'm at least way to fuul zum was
-            schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.
-            <span class="text-red-800">pls scroll...</span> Aspernatur, doloremque
-            unde. Aliquid reiciendis, saepe consequatur ratione repellendus obcaecati,
-            debitis ex molestias aut impedit ipsum tempora tempore blanditiis odio
-            dolore maiores.
-            <br />
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit
-            cupiditate, quia voluptatibus reprehenderit quam. Neque dolores error
-            officia reprehenderit incidunt unde deleniti, commodi veritatis. Vero
-            perferendis recusandae illo qui. <br />
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit
-            cupiditate, quia voluptatibus reprehenderit quam. Neque dolores error
-            officia reprehenderit incidunt unde deleniti, commodi veritatis. Vero
-            perferendis recusandae illo qui.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0">
-        <!-- Adjust the structure slightly without changing the layout -->
-        <div class="relative flex w-full h-full">
-          <!-- Video Container -->
-          <video class="w-full object-cover z-20" autoplay muted loop>
-            <source
-              src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/MATEC%20x%20DRIFTANIC%20v3.0%20Volvo%20945.webm"
-              type="video/webm"
-            />
-          </video>
-          <!-- Invisible link overlay that covers the entire video -->
-          <a
-            href="https://www.youtube.com/watch?v=gMvDwypLNLM&vq=hd2160"
-            class="absolute inset-0 z-30"
-            style="background: rgba(0,0,0,0);"
-            target="_blank"
-            rel="noopener noreferrer"></a>
-
-          <!-- Text overlay with blending modes -->
-          <p
-            class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-          >
-            MATEC x DRIFTANIC
-          </p>
-          <p
-            class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-          >
-            MATEC x DRIFTANIC
-          </p>
-        </div>
-
-        <div class="relative z-40 p-1 pb-8">
-          <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-          <div class="w-full pl-8 bg-white">
-            <p class="text-gray-700 text-left text-1xl">
-              Click on the video to watch
-            </p>
-          </div>
-        </div>
-
-        <div class="relative z-40">
-          <!-- Adjust z-index here -->
-          <div class="flex flex-col bg-white w-full">
-            <p class="text-gray-700 text-2xl">
-              MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a
-              Friend drifting his car which was made by another friend. Duh.
-              Videobeschribig do ahne. Hello I'm at least way to fuul zum was
-              schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing
-              elit.
-              <span class="text-red-800">pls scroll...</span> Aspernatur, doloremque
-              unde. Aliquid reiciendis, saepe consequatur ratione repellendus obcaecati,
-              debitis ex molestias aut impedit ipsum tempora tempore blanditiis odio
-              dolore maiores.
-              <br />
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-              sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-              error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-              Vero perferendis recusandae illo qui. <br />
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-              sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-              error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-              Vero perferendis recusandae illo qui.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0">
-          <!-- Adjust the structure slightly without changing the layout -->
-          <div class="relative flex w-full h-full">
-            <!-- Video Container -->
-            <video class="w-full object-cover z-20" autoplay muted loop>
-              <source
-                src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Tenerife.mp4"
-                type="video/mp4"
-              />
-            </video>
-            <!-- Invisible link overlay that covers the entire video -->
-            <a
-              href="https://www.youtube.com/watch?v=GY9u90LHCnQ&vq=hd1080"
-              class="absolute inset-0 z-30"
-              style="background: rgba(0,0,0,0);"
-              target="_blank"
-              rel="noopener noreferrer"></a>
-
-            <!-- Text overlay with blending modes -->
-            <p
-              class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-            >
-              TENERIFE
-            </p>
-            <p
-              class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-            >
-              TENERIFE
-            </p>
-          </div>
-
-          <div class="relative z-40 p-1 pb-8">
-            <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-            <div class="w-full pl-8 bg-white">
-              <p class="text-gray-700 text-left text-1xl">
-                Click on the video to watch
-              </p>
-            </div>
-          </div>
-
-          <div class="relative z-40">
-            <!-- Adjust z-index here -->
-            <div class="flex flex-col bg-white w-full">
-              <p class="text-gray-700 text-2xl">
-                Videobeschribig do ahne. Hello I'm at least way to fuul zum was
-                schribe darum: Lorem ipsum dolor sit amet consectetur
-                adipisicing elit.
-                <span class="text-red-800">pls scroll...</span> Aspernatur, doloremque
-                unde. Aliquid reiciendis, saepe consequatur ratione repellendus obcaecati,
-                debitis ex molestias aut impedit ipsum tempora tempore blanditiis
-                odio dolore maiores.
-                <br />
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-                error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-                Vero perferendis recusandae illo qui. <br />
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-                error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-                Vero perferendis recusandae illo qui.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div
-            class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0"
-          >
-            <!-- Adjust the structure slightly without changing the layout -->
-            <div class="relative flex w-full h-full">
-              <!-- Video Container -->
-              <video class="w-full object-cover z-20" autoplay muted loop>
-                <source
-                  src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Condensation%20%5B7%5D.webm"
-                  type="video/webm"
-                />
-              </video>
-              <!-- Invisible link overlay that covers the entire video -->
-              <a
-                href="https://www.youtube.com/watch?v=Jy_G2DbyrEI&vq=hd2160"
-                class="absolute inset-0 z-30"
-                style="background: rgba(0,0,0,0);"
-                target="_blank"
-                rel="noopener noreferrer"></a>
-
-              <!-- Text overlay with blending modes -->
-              <p
-                class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-              >
-                CONDENSATION [7]
-              </p>
-              <p
-                class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-              >
-                CONDENSATION [7]
-              </p>
-            </div>
-
-            <div class="relative z-40 p-1 pb-8">
-              <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-              <div class="w-full pl-8 bg-white">
-                <p class="text-gray-700 text-left text-1xl">
-                  Click on the video to watch
-                </p>
-              </div>
-            </div>
-
-            <div class="relative z-40">
-              <!-- Adjust z-index here -->
-              <div class="flex flex-col bg-white w-full">
-                <p class="text-gray-700 text-2xl">
-                  Videobeschribig do ahne. Hello I'm at least way to fuul zum
-                  was schribe darum: Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit.
-                  <span class="text-red-800">pls scroll...</span> Aspernatur, doloremque
-                  unde. Aliquid reiciendis, saepe consequatur ratione repellendus
-                  obcaecati, debitis ex molestias aut impedit ipsum tempora tempore
-                  blanditiis odio dolore maiores.
-                  <br />
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                  sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-                  error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-                  Vero perferendis recusandae illo qui. <br />
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                  sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-                  error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-                  Vero perferendis recusandae illo qui.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0"
-            >
-              <!-- Adjust the structure slightly without changing the layout -->
-              <div class="relative flex w-full h-full">
-                <!-- Video Container -->
-                <video class="w-full object-cover z-20" autoplay muted loop>
-                  <source
-                    src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Andermatt%20Gemsstock.webm"
-                    type="video/webm"
-                  />
-                </video>
-                <!-- Invisible link overlay that covers the entire video -->
-                <a
-                  href="https://www.youtube.com/watch?v=J9KUrYSbrtE&vq=hd2160"
-                  class="absolute inset-0 z-30"
-                  style="background: rgba(0,0,0,0);"
-                  target="_blank"
-                  rel="noopener noreferrer"></a>
-
-                <!-- Text overlay with blending modes -->
-                <p
-                  class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-                >
-                  ANDERMATT // GEMSSTOCK
-                </p>
-                <p
-                  class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-                >
-                  ANDERMATT // GEMSSTOCK
-                </p>
-              </div>
-
-              <div class="relative z-40 p-1 pb-8">
-                <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-                <div class="w-full pl-8 bg-white">
-                  <p class="text-gray-700 text-left text-1xl">
-                    Click on the video to watch
-                  </p>
-                </div>
-              </div>
-
-              <div class="relative z-40">
-                <!-- Adjust z-index here -->
-                <div class="flex flex-col bg-white w-full">
-                  <p class="text-gray-700 text-2xl">
-                    Videobeschribig do ahne. Hello I'm at least way to fuul zum
-                    was schribe darum: Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit.
-                    <span class="text-red-800">pls scroll...</span> Aspernatur, doloremque
-                    unde. Aliquid reiciendis, saepe consequatur ratione repellendus
-                    obcaecati, debitis ex molestias aut impedit ipsum tempora tempore
-                    blanditiis odio dolore maiores.
-                    <br />
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                    sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-                    error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-                    Vero perferendis recusandae illo qui. <br />
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                    sit cupiditate, quia voluptatibus reprehenderit quam. Neque dolores
-                    error officia reprehenderit incidunt unde deleniti, commodi veritatis.
-                    Vero perferendis recusandae illo qui.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div
-                class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0"
-              >
-                <!-- Adjust the structure slightly without changing the layout -->
-                <div class="relative flex w-full h-full">
-                  <!-- Video Container -->
-                  <video class="w-full object-cover z-20" autoplay muted loop>
-                    <source
-                      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SOMEWHERE.webm"
-                      type="video/webm"
-                    />
-                  </video>
-                  <!-- Invisible link overlay that covers the entire video -->
-                  <a
-                    href="https://www.youtube.com/watch?v=VPzKhhH16F0&vq=hd2160"
-                    class="absolute inset-0 z-30"
-                    style="background: rgba(0,0,0,0);"
-                    target="_blank"
-                    rel="noopener noreferrer"></a>
-
-                  <!-- Text overlay with blending modes -->
-                  <p
-                    class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-                  >
-                    SOMEWHERE
-                  </p>
-                  <p
-                    class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-                  >
-                    SOMEWHERE
-                  </p>
-                </div>
-
-                <div class="relative z-40 p-1 pb-8">
-                  <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-                  <div class="w-full pl-8 bg-white">
-                    <p class="text-gray-700 text-left text-1xl">
-                      Click on the video to watch
-                    </p>
-                  </div>
-                </div>
-
-                <div class="relative z-40">
-                  <!-- Adjust z-index here -->
-                  <div class="flex flex-col bg-white w-full">
-                    <p class="text-gray-700 text-2xl">
-                      Videobeschribig do ahne. Hello I'm at least way to fuul
-                      zum was schribe darum: Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit.
-                      <span class="text-red-800">pls scroll...</span> Aspernatur,
-                      doloremque unde. Aliquid reiciendis, saepe consequatur ratione
-                      repellendus obcaecati, debitis ex molestias aut impedit ipsum
-                      tempora tempore blanditiis odio dolore maiores.
-                      <br />
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                      sit cupiditate, quia voluptatibus reprehenderit quam. Neque
-                      dolores error officia reprehenderit incidunt unde deleniti,
-                      commodi veritatis. Vero perferendis recusandae illo qui. <br
-                      />
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                      sit cupiditate, quia voluptatibus reprehenderit quam. Neque
-                      dolores error officia reprehenderit incidunt unde deleniti,
-                      commodi veritatis. Vero perferendis recusandae illo qui.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div
-                  class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0"
-                >
-                  <!-- Adjust the structure slightly without changing the layout -->
-                  <div class="relative flex w-full h-full">
-                    <!-- Video Container -->
-                    <video class="w-full object-cover z-20" autoplay muted loop>
-                      <source
-                        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Our%20Christmas.webm"
-                        type="video/webm"
-                      />
-                    </video>
-                    <!-- Invisible link overlay that covers the entire video -->
-                    <a
-                      href="https://www.youtube.com/watch?v=kZADnEeXTFA&vq=hd2160"
-                      class="absolute inset-0 z-30"
-                      style="background: rgba(0,0,0,0);"
-                      target="_blank"
-                      rel="noopener noreferrer"></a>
-
-                    <!-- Text overlay with blending modes -->
-                    <p
-                      class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-                    >
-                      OUR CHRISTMAS
-                    </p>
-                    <p
-                      class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-                    >
-                      OUR CHRISTMAS
-                    </p>
-                  </div>
-
-                  <div class="relative z-40 p-1 pb-8">
-                    <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-                    <div class="w-full pl-8 bg-white">
-                      <p class="text-gray-700 text-left text-1xl">
-                        Click on the video to watch
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="relative z-40">
-                    <!-- Adjust z-index here -->
-                    <div class="flex flex-col bg-white w-full">
-                      <p class="text-gray-700 text-2xl">
-                        Videobeschribig do ahne. Hello I'm at least way to fuul
-                        zum was schribe darum: Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit.
-                        <span class="text-red-800">pls scroll...</span> Aspernatur,
-                        doloremque unde. Aliquid reiciendis, saepe consequatur ratione
-                        repellendus obcaecati, debitis ex molestias aut impedit ipsum
-                        tempora tempore blanditiis odio dolore maiores.
-                        <br />
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Corporis sit cupiditate, quia voluptatibus reprehenderit
-                        quam. Neque dolores error officia reprehenderit incidunt
-                        unde deleniti, commodi veritatis. Vero perferendis recusandae
-                        illo qui. <br />
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Corporis sit cupiditate, quia voluptatibus reprehenderit
-                        quam. Neque dolores error officia reprehenderit incidunt
-                        unde deleniti, commodi veritatis. Vero perferendis recusandae
-                        illo qui.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="relative z-30 bg-white flex flex-col h-auto p-8 pt-12 mt-0"
-                >
-                  <!-- Adjust the structure slightly without changing the layout -->
-                  <div class="relative flex w-full h-full">
-                    <!-- Video Container -->
-                    <video class="w-full object-cover z-20" autoplay muted loop>
-                      <source
-                        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/THUN%20X%20VICINITY.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                    <!-- Invisible link overlay that covers the entire video -->
-                    <a
-                      href="https://www.youtube.com/watch?v=twxd_mfqtiI&vq=hd1080"
-                      class="absolute inset-0 z-30"
-                      style="background: rgba(0,0,0,0);"
-                      target="_blank"
-                      rel="noopener noreferrer"></a>
-
-                    <!-- Text overlay with blending modes -->
-                    <p
-                      class="absolute mix-blend-color-dodge -top-9 -left-4 text-orange-900 text-6xl italic font-black z-40"
-                    >
-                      THUN x VICINITY
-                    </p>
-                    <p
-                      class="absolute mix-blend-darken -top-9 -left-4 text-black text-6xl italic font-black z-35"
-                    >
-                      THUN x VICINITY
-                    </p>
-                  </div>
-
-                  <div class="relative z-40 p-1 pb-8">
-                    <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
-                    <div class="w-full pl-8 bg-white">
-                      <p class="text-gray-700 text-left text-1xl">
-                        Click on the video to watch
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="relative z-40">
-                    <!-- Adjust z-index here -->
-                    <div class="flex flex-col bg-white w-full">
-                      <p class="text-gray-700 text-2xl">
-                        Videobeschribig do ahne. Hello I'm at least way to fuul
-                        zum was schribe darum: Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit.
-                        <span class="text-red-800">pls scroll...</span> Aspernatur,
-                        doloremque unde. Aliquid reiciendis, saepe consequatur ratione
-                        repellendus obcaecati, debitis ex molestias aut impedit ipsum
-                        tempora tempore blanditiis odio dolore maiores.
-                        <br />
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Corporis sit cupiditate, quia voluptatibus reprehenderit
-                        quam. Neque dolores error officia reprehenderit incidunt
-                        unde deleniti, commodi veritatis. Vero perferendis recusandae
-                        illo qui. <br />
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Corporis sit cupiditate, quia voluptatibus reprehenderit
-                        quam. Neque dolores error officia reprehenderit incidunt
-                        unde deleniti, commodi veritatis. Vero perferendis recusandae
-                        illo qui.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="relative z-30 bg-white">
-                  <div class="pl-2">
-                    <p class="text-gray-700 text-6xl italic font-black">
-                      SO ICH SOETT EIG SCHOLANG PENNE
-                    </p>
-                    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-                      Hush, little baby, don't say a word. Papa's gonna buy you
-                      a mockingbird And if that mockingbird won't sing, Papa's
-                      gonna buy you a diamond ring And if that diamond ring
-                      turns brass, Papa's gonna buy you a looking glass And if
-                      that looking glass gets broke, Papa's gonna buy you a
-                      billy goat And if that billy goat won't pull, Papa's gonna
-                      buy you a cart and bull And if that cart and bull turn
-                      over, Papa's gonna buy you a dog named Rover And if that
-                      dog named Rover won't bark Papa's gonna buy you a horse
-                      and cart And if that horse and cart fall down, You'll
-                      still be the sweetest little baby in town.<br />
-                      Hush, little baby, don't say a word. Papa's gonna buy you a
-                      mockingbird And if that mockingbird won't sing, Papa's gonna
-                      buy you a diamond ring And if that diamond ring turns brass,
-                      Papa's gonna buy you a looking glass And if that looking glass
-                      gets broke, Papa's gonna buy you a billy goat And if that billy
-                      goat won't pull, Papa's gonna buy you a cart and bull And if
-                      that cart and bull turn over, Papa's gonna buy you a dog named
-                      Rover And if that dog named Rover won't bark Papa's gonna buy
-                      you a horse and cart And if that horse and cart fall down,
-                      You'll still be the sweetest little baby in town.
-                    </p>
-                    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-                      Hush, little baby, don't say a word. Papa's gonna buy you
-                      a mockingbird And if that mockingbird won't sing, Papa's
-                      gonna buy you a diamond ring And if that diamond ring
-                      turns brass, Papa's gonna buy you a looking glass And if
-                      that looking glass gets broke, Papa's gonna buy you a
-                      billy goat And if that billy goat won't pull, Papa's gonna
-                      buy you a cart and bull And if that cart and bull turn
-                      over, Papa's gonna buy you a dog named Rover And if that
-                      dog named Rover won't bark Papa's gonna buy you a horse
-                      and cart And if that horse and cart fall down, You'll
-                      still be the sweetest little baby in town.<br />
-                      Hush, little baby, don't say a word. Papa's gonna buy you a
-                      mockingbird And if that mockingbird won't sing, Papa's gonna
-                      buy you a diamond ring And if that diamond ring turns brass,
-                      Papa's gonna buy you a looking glass And if that looking glass
-                      gets broke, Papa's gonna buy you a billy goat And if that billy
-                      goat won't pull, Papa's gonna buy you a cart and bull And if
-                      that cart and bull turn over, Papa's gonna buy you a dog named
-                      Rover And if that dog named Rover won't bark Papa's gonna buy
-                      you a horse and cart And if that horse and cart fall down,
-                      You'll still be the sweetest little baby in town.
-                    </p>
-                    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-                      Hush, little baby, don't say a word. Papa's gonna buy you
-                      a mockingbird And if that mockingbird won't sing, Papa's
-                      gonna buy you a diamond ring And if that diamond ring
-                      turns brass, Papa's gonna buy you a looking glass And if
-                      that looking glass gets broke, Papa's gonna buy you a
-                      billy goat And if that billy goat won't pull, Papa's gonna
-                      buy you a cart and bull And if that cart and bull turn
-                      over, Papa's gonna buy you a dog named Rover And if that
-                      dog named Rover won't bark Papa's gonna buy you a horse
-                      and cart And if that horse and cart fall down, You'll
-                      still be the sweetest little baby in town.<br />
-                      Hush, little baby, don't say a word. Papa's gonna buy you a
-                      mockingbird And if that mockingbird won't sing, Papa's gonna
-                      buy you a diamond ring And if that diamond ring turns brass,
-                      Papa's gonna buy you a looking glass And if that looking glass
-                      gets broke, Papa's gonna buy you a billy goat And if that billy
-                      goat won't pull, Papa's gonna buy you a cart and bull And if
-                      that cart and bull turn over, Papa's gonna buy you a dog named
-                      Rover And if that dog named Rover won't bark Papa's gonna buy
-                      you a horse and cart And if that horse and cart fall down,
-                      You'll still be the sweetest little baby in town.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="relative my-10 z-30 bg-white" style="top: -8vh">
-                  <div class="pl-2">
-                    <p class="text-gray-700 text-6xl italic font-black">
-                      LALALA LULULU ICH LOS DE TEIL MOL VO SUPERMAVEN SCHRIBE
-                    </p>
-                    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-                      Supermaven write me scrollcontents scrollcontents
-                      scrollcontents er het scho abkackt. also mit eif text
-                      ischer müll hahahahahhaha ich gang wieder zrug ufs guete
-                      alte Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Quidem tempore ipsum repellendus eum ab eius libero
-                      doloremque aliquid recusandae laborum, consequuntur nulla
-                      consequatur natus, excepturi deleniti totam reprehenderit
-                      iusto similique!
-                      <br />
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-                      sit cupiditate, quia voluptatibus reprehenderit quam. Neque
-                      dolores error officia reprehenderit incidunt unde deleniti,
-                      commodi veritatis. Vero perferendis recusandae illo qui.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="relative z-30 bg-red" style="top: -6vh">
-                  <div>
-                    <a
-                      class="flex text-[#0000EE] mix-blend-difference underline blue justify-center items-center text-6xl"
-                      href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                      >TOTALLY TRUSTWORTHY LINK</a
-                    >
-                  </div>
-                </div>
-                <script>
-                  // Check if the window object is defined to run the script
-                  if (typeof window !== "undefined") {
-                    window.addEventListener("DOMContentLoaded", function () {
-                      const liteYTEmbed =
-                        document.querySelector("lite-youtube");
-                      if (liteYTEmbed) {
-                        // Initialize the Lite YouTube Embed if necessary
-                        // This is usually not needed if you use the <lite-youtube> tag correctly
-                      }
-                    });
-
-                    window.addEventListener("scroll", function () {
-                      const navbar = document.querySelector(".sticky-nav");
-                      const stickyOffset = window.innerHeight * 0.25;
-
-                      if (window.scrollY >= stickyOffset) {
-                        navbar.classList.add("sticky");
-                      } else {
-                        navbar.classList.remove("sticky");
-                      }
-                    });
-
-                    const title = document.getElementById("title");
-                    const updateTitleSize = () => {
-                      const maxFontSize = 14; // Maximum font size in rem
-                      const minMargin = 20; // Minimum margin in pixels
-                      const availableWidth = window.innerWidth - 2 * minMargin; // Calculate available width with minimum margin
-                      title.style.fontSize = maxFontSize + "rem";
-                      const actualWidth = title.scrollWidth;
-
-                      // If the title exceeds available width, scale it down
-                      if (actualWidth > availableWidth) {
-                        const scaleFactor = availableWidth / actualWidth;
-                        title.style.fontSize =
-                          maxFontSize * scaleFactor + "rem";
-                      } else {
-                        // Ensure title is at max size if it fits
-                        title.style.fontSize = maxFontSize + "rem";
-                      }
-                    };
-
-                    window.addEventListener("resize", updateTitleSize);
-                    window.addEventListener("load", updateTitleSize);
-                    updateTitleSize();
-                  }
-                </script>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {
+    videos.map((vid) => (
+      <Video
+        title={vid.title}
+        youtube_url={vid.youtube_url}
+        hosted_video_url={vid.hosted_video_url}
+        description={vid.description}
+      />
+    ))
+  }
 </div>
+
+<script>
+  // Check if the window object is defined to run the script
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".sticky-nav");
+      const stickyOffset = window.innerHeight * 0.25;
+
+      if (window.scrollY >= stickyOffset) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    });
+
+    const title = document.getElementById("title");
+    const updateTitleSize = () => {
+      const maxFontSize = 14; // Maximum font size in rem
+      const minMargin = 20; // Minimum margin in pixels
+      const availableWidth = window.innerWidth - 2 * minMargin; // Calculate available width with minimum margin
+      title.style.fontSize = maxFontSize + "rem";
+      const actualWidth = title.scrollWidth;
+
+      // If the title exceeds available width, scale it down
+      if (actualWidth > availableWidth) {
+        const scaleFactor = availableWidth / actualWidth;
+        title.style.fontSize = maxFontSize * scaleFactor + "rem";
+      } else {
+        // Ensure title is at max size if it fits
+        title.style.fontSize = maxFontSize + "rem";
+      }
+    };
+
+    window.addEventListener("resize", updateTitleSize);
+    window.addEventListener("load", updateTitleSize);
+    updateTitleSize();
+  }
+</script>
