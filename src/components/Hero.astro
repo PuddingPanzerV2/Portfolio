@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<video class="absolute h-[95vh] inset-0 -z-10 object-cover" autoplay muted loop>
+  <source
+    src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/gears%20fertig%20ohni%20text%20aber%20k%C3%B6rnig.mp4"
+    type="video/mp4"
+  />
+</video>
+
+<div class="h-screen w-full flex justify-center items-center">
+  <h1
+    class="text-[#70a0a0] mix-blend-difference font-mono text-mega text-center"
+  >
+    {title}
+  </h1>
+</div>

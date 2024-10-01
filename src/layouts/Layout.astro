@@ -1,12 +1,12 @@
 ---
 interface Props {
   title: string;
-  siteTitle?: string;
 }
 
-const { title, siteTitle } = Astro.props;
+const { title } = Astro.props;
 
-import MyLink from "../components/MyLink.astro";
+import Hero from "../components/Hero.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <!doctype html>
@@ -22,93 +22,11 @@ import MyLink from "../components/MyLink.astro";
       rel="stylesheet"
     />
   </head>
-  <body class="relative font-sans text-white">
-    <!-- "My Work" title -->
-    <!-- <h2 class="absolute top-[12vh] w-full text-center text-3xl font-bold z-40">
-      MY WORK
-    </h2> -->
-
-    {
-      siteTitle && (
-        <h1
-          class="text-3xl font-bold text-center my-8 text-white"
-          slot="bevore-nav"
-        >
-          {siteTitle}
-        </h1>
-      )
-    }
-
+  <body class="font-sans">
     <!-- Navigation Bar -->
-    <div id="navbar" class="absolute z-10 left-0 top-52 w-full text-white">
-      <nav
-        class="w-full flex flex-wrap p-8 gap-8 justify-center items-center text-white"
-      >
-        <MyLink title="CALMNESS" href="/CALMNESS" />
-        <MyLink title="DESTRUCTION" href="/DESTRUCTION" />
-        <MyLink title="EXPERIMENTAL" href="/EXPERIMENTAL" />
-        <MyLink
-          title="3D ANIMATIONS & VISUALS"
-          href="/3D-ANIMATIONS-AND-VISUALS"
-        />
-        <MyLink
-          title="MADE WITH & ON THE PHONE"
-          href="/MADE-ON-AND-WITH-THE-PHONE"
-        />
-      </nav>
-    </div>
-
-    <video
-      class="fixed top-0 left-0 w-full h-full -z-10 object-cover"
-      autoplay
-      muted
-      loop
-    >
-      <source
-        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/gears%20fertig%20ohni%20text%20aber%20k%C3%B6rnig.mp4"
-        type="video/mp4"
-      />
-    </video>
-
-    <!-- Title with video background -->
-    <div class="h-screen w-full flex justify-center items-center">
-      <h1
-        class="text-[#70a0a0] mix-blend-difference font-mono text-mega text-center"
-        id="title"
-      >
-        INSANE BRAIN
-      </h1>
-    </div>
+    <Nav />
+    <Hero title={title} />
 
     <slot />
-
-    <script is:inline>
-      window.onscroll = function () {
-        myFunction();
-      };
-
-      var navbar = document.getElementById("navbar");
-
-      var sticky = navbar.offsetTop;
-
-      console.log(sticky);
-
-      function myFunction() {
-        if (window.scrollY >= sticky) {
-          navbar.classList.remove("absolute");
-          navbar.classList.add("my-sticky-stick");
-        } else {
-          navbar.classList.remove("my-sticky-stick");
-          navbar.classList.add("absolute");
-        }
-      }
-    </script>
   </body>
 </html>
-
-<style>
-  .my-sticky-stick {
-    position: sticky;
-    top: 0;
-  }
-</style>
