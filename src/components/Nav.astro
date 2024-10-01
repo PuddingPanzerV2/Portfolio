@@ -1,0 +1,53 @@
+---
+import MyLink from "./MyLink.astro";
+
+const navigation = [
+  { name: "CALMNESS", href: "/CALMNESS" },
+  { name: "DESTRUCTION", href: "/DESTRUCTION" },
+  { name: "EXPERIMENTAL", href: "/EXPERIMENTAL" },
+  { name: "3D ANIMATIONS & VISUALS", href: "/3D-ANIMATIONS-AND-VISUALS" },
+  { name: "MADE WITH & ON THE PHONE", href: "/MADE-ON-AND-WITH-THE-PHONE" },
+];
+---
+
+<div id="navbar" class="absolute z-10 left-0 top-52 w-full non-sticky-stick">
+  <nav class="w-full flex flex-wrap p-8 gap-8 justify-center items-center">
+    {navigation.map((nav) => <MyLink title={nav.name} href={nav.href} />)}
+  </nav>
+</div>
+
+<style>
+  .non-sticky-stick {
+    color: white;
+  }
+  .my-sticky-stick {
+    position: fixed;
+    background-color: white;
+    border-bottom: 3px solid black; /* Thicker black border at the bottom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
+    top: 0;
+  }
+</style>
+
+<script is:inline>
+  window.onscroll = function () {
+    myFunction();
+  };
+
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+
+  console.log(sticky);
+
+  function myFunction() {
+    if (window.scrollY >= sticky) {
+      navbar.classList.remove("absolute");
+      navbar.classList.remove("non-sticky-stick");
+      navbar.classList.add("my-sticky-stick");
+    } else {
+      navbar.classList.remove("my-sticky-stick");
+      navbar.classList.add("absolute");
+      navbar.classList.add("non-sticky-stick");
+    }
+  }
+</script>
