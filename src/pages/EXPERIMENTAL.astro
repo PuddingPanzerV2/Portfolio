@@ -1,128 +1,278 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll Video Reveal</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-      /* Essential styles for the overlay to prevent stuttering */
-      #white-overlay {
-        will-change: transform;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80vh; /* Ensure full viewport height */
-      }
-      /* Define keyframes for the pulsing animation */
-      @keyframes pulse {
-        0%,
-        100% {
-          color: #d8e0e0; /* Original color */
-        }
-        50% {
-          color: rgb(135, 87, 131); /* Pulse to red color */
-        }
-      }
+---
+import Video from "../components/Video.astro";
 
-      /* Add the animation to the link on hover */
-      .hover\:text-animation-color:hover {
-        animation: pulse 5s infinite; /* Apply pulsing animation */
-      }
-    </style>
-  </head>
-  <body class="relative h-[300vh] bg-black text-white overflow-x-hidden">
-    <!-- Background Video -->
-    <video
-      id="video-background"
-      class="fixed top-0 left-0 w-full h-full object-cover"
-      muted
-      preload="auto"
-      playsinline
-    >
-      <source
-        src="https://pub-1b65d505ca944e34b94a4d35427c4967.r2.dev/himmel%20website.mp4"
-        type="video/mp4"
+const videos = [
+  {
+    title: "47 33 38.16N 7 35 26.16E",
+    youtube_url: "https://www.youtube.com/watch?v=w_HUjOIoYSU&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/47%2033%2038.16N%207%2035%2026.16E.webm",
+    description:
+      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "ELECTRIC DISCHARGE",
+    youtube_url: "https://www.youtube.com/watch?v=pzFQPzkkAQU&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ELECTRIC%20DISCHARGE.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "MUTTENALP",
+    youtube_url: "https://www.youtube.com/watch?v=iEScntxKfHc&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/TERROR%20REID%20-%20UPPERCUTS%20x%20Fat%20Albert%20and%20the%20Cosby%20Kids.mp4",
+    description:
+      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "ALICANTE",
+    youtube_url: "https://www.youtube.com/watch?v=3hW7AbfMBqI&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ALICANTE.webm",
+    description:
+      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "MATEC x DRIFTANIC",
+    youtube_url: "https://www.youtube.com/watch?v=gMvDwypLNLM&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/MATEC%20x%20DRIFTANIC%20v3.0%20Volvo%20945.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "TENERIFE",
+    youtube_url: "https://www.youtube.com/watch?v=GY9u90LHCnQ&vq=hd1080",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Tenerife.mp4",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "CONDENSATION [7]",
+    youtube_url: "https://www.youtube.com/watch?v=Jy_G2DbyrEI&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Condensation%20%5B7%5D.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "ANDERMATT // GEMSSTOCK",
+    youtube_url: "https://www.youtube.com/watch?v=J9KUrYSbrtE&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Andermatt%20Gemsstock.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "SOMEWHERE",
+    youtube_url: "https://www.youtube.com/watch?v=VPzKhhH16F0&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SOMEWHERE.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "OUR CHRISTMAS",
+    youtube_url: "https://www.youtube.com/watch?v=kZADnEeXTFA&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Our%20Christmas.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+];
+---
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+  .sticky-nav {
+    position: absolute;
+    top: 20vh;
+    width: 100%;
+    z-index: 50;
+    background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
+    color: white;
+    padding: 0rem;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease,
+      border-bottom 0.3s ease; /* Transition for shadow and border */
+  }
+
+  .sticky-nav.sticky {
+    position: fixed;
+    top: 0;
+    background-color: white; /* Change to white when sticky */
+    color: black; /* Text color change for visibility */
+    border-bottom: 3px solid black; /* Thicker black border at the bottom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    padding: 10px;
+    line-height: 1;
+    margin: 6px;
+    flex-direction: column; /* Stacks the text vertically */
+  }
+
+  .nav-item a {
+    color: inherit;
+    transition: color 0.3s ease;
+    text-align: center;
+    line-height: 1.1; /* Adjust the spacing between lines when they stack */
+  }
+  /* Change color on hover */
+  .nav-item:hover a {
+    color: #cc4e5c;
+    /* Set the desired hover color */
+  }
+
+  /* Style for "My Work" title */
+  .my-work-title {
+    position: absolute;
+    top: 12vh; /* Move the title down by 20% of the viewport */
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    z-index: 40;
+  }
+
+  /* Custom text size for title */
+  .text-custom-size {
+    white-space: nowrap; /* Prevent text from wrapping */
+    font-size: 14rem; /* Set a fixed font size */
+    text-align: center; /* Center the text */
+    margin: 0 auto; /* Center alignment */
+    top: 5vh; /* Move the title down by 10% of the viewport height */
+    position: relative; /* Relative positioning to allow top adjustment */
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .z-[100] {
+    position: relative;
+    z-index: 100; /* High z-index to ensure visibility */
+  }
+</style>
+
+<!-- New "My Work" title -->
+<h2 class="my-work-title">MY WORK</h2>
+
+<nav class="sticky-nav">
+  <ul class="flex justify-between items-center w-full">
+    <li class="nav-item font-bold text-2xl flex-1">
+      <a href="/CALMNESS">CALMNESS</a>
+    </li>
+    <li class="nav-item font-bold text-2xl flex-1">
+      <a href="/DESTRUCTION">DESTRUCTION</a>
+    </li>
+    <li class="nav-item font-bold text-2xl flex-1">
+      <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
+    </li>
+    <li class="nav-item font-bold text-2xl flex-1">
+      <a href="/3D-ANIMATIONS-AND-VISUALS">
+        <span>3D ANIMATIONS</span>
+        <span>& VISUALS</span>
+      </a>
+    </li>
+    <li class="nav-item font-bold text-2xl flex-1">
+      <a href="/MADE-ON-AND-WITH-THE-PHONE">
+        <span>MADE WITH &</span>
+        <span>ON THE PHONE</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="relative h-[90vh] w-full flex justify-center items-center">
+  <video
+    class="fixed top-0 left-0 w-full h-full object-cover z-10"
+    autoplay
+    muted
+    loop
+  >
+    <source
+      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SpaceEngine.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
+  <h1
+    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
+    id="title"
+  >
+    EXPERIMENTAL
+  </h1>
+</div>
+
+<div>
+  {
+    videos.map((vid) => (
+      <Video
+        title={vid.title}
+        youtube_url={vid.youtube_url}
+        hosted_video_url={vid.hosted_video_url}
+        description={vid.description}
       />
-      Your browser does not support HTML5 video.
-    </video>
-
-    <!-- White Overlay -->
-    <div
-      id="white-overlay"
-      class="fixed top-0 left-0 w-full h-[80vh] bg-white z-10 transition-transform"
+    ))
+  }
+</div>
+<div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
+  <div>
+    <a
+      class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
+      href="/">BACK HOME</a
     >
-      <h1 class="text-[#70a0a0] z-10 font-mono text-9xl text-center">
-        EXPERIMENTAL
-      </h1>
-    </div>
-    <div
-      class="relative z-20 flex items-center justify-center text-end h-[190vh]"
-    >
-      <div
-        class="relative z-20 flex items-center justify-center text-end h-[190vh]"
-      >
-        <ul>
-          <li>
-            <a
-              href="/index.html"
-              class="text-[#d8e0e0] z-40 font-mono text-9xl text-center hover:text-animation-color"
-            >
-              HOME
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  </div>
+</div>
 
-    <!-- Scroll Content -->
-    <div class="relative z-20 flex items-center justify-center h-[300vh]">
-      <h1
-        class="text-6xl font-bold text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-      >
-        Scroll Down
-      </h1>
-    </div>
+<script>
+  // Check if the window object is defined to run the script
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".sticky-nav");
+      const stickyOffset = window.innerHeight * 0.25;
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const video = document.getElementById("video-background");
-        const overlay = document.getElementById("white-overlay");
-        let lastKnownScrollPosition = 0;
-        let ticking = false;
+      if (window.scrollY >= stickyOffset) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    });
 
-        function handleScroll() {
-          lastKnownScrollPosition = window.scrollY;
+    const title = document.getElementById("title");
+    const updateTitleSize = () => {
+      const maxFontSize = 14; // Maximum font size in rem
+      const minMargin = 20; // Minimum margin in pixels
+      const availableWidth = window.innerWidth - 2 * minMargin; // Calculate available width with minimum margin
+      title.style.fontSize = maxFontSize + "rem";
+      const actualWidth = title.scrollWidth;
 
-          if (!ticking) {
-            window.requestAnimationFrame(() => {
-              const maxScroll =
-                document.documentElement.scrollHeight - window.innerHeight;
-              const scrollFraction = lastKnownScrollPosition / maxScroll;
+      // If the title exceeds available width, scale it down
+      if (actualWidth > availableWidth) {
+        const scaleFactor = availableWidth / actualWidth;
+        title.style.fontSize = maxFontSize * scaleFactor + "rem";
+      } else {
+        // Ensure title is at max size if it fits
+        title.style.fontSize = maxFontSize + "rem";
+      }
+    };
 
-              if (video && video instanceof HTMLVideoElement) {
-                // Map the scrollFraction to the video duration
-                video.currentTime = scrollFraction * video.duration;
-              }
-
-              if (overlay) {
-                // Move the white overlay upwards
-                overlay.style.transform = `translateY(-${lastKnownScrollPosition}px)`;
-              }
-
-              ticking = false;
-            });
-
-            ticking = true;
-          }
-        }
-
-        // Attach the scroll event listener
-        window.addEventListener("scroll", handleScroll);
-
-        // Ensure the scroll effect is correctly set when the video metadata is loaded
-        video.addEventListener("loadedmetadata", handleScroll);
-      });
-    </script>
-  </body>
-</html>
+    window.addEventListener("resize", updateTitleSize);
+    window.addEventListener("load", updateTitleSize);
+    updateTitleSize();
+  }
+</script>

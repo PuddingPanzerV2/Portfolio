@@ -1,3 +1,82 @@
+---
+import Video from "../components/Video.astro";
+
+const videos = [
+  {
+    title: "DON'T GET TOO CLOSE TO THE GIANT SPACE ENGINE",
+    youtube_url: "https://www.youtube.com/watch?v=pAF2QDMNKoQ&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SpaceEngine.mp4",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "MUTTENALP",
+    youtube_url: "https://www.youtube.com/watch?v=iEScntxKfHc&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Muttenalp.webm",
+    description:
+      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "ALICANTE",
+    youtube_url: "https://www.youtube.com/watch?v=3hW7AbfMBqI&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ALICANTE.webm",
+    description:
+      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "MATEC x DRIFTANIC",
+    youtube_url: "https://www.youtube.com/watch?v=gMvDwypLNLM&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/MATEC%20x%20DRIFTANIC%20v3.0%20Volvo%20945.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "TENERIFE",
+    youtube_url: "https://www.youtube.com/watch?v=GY9u90LHCnQ&vq=hd1080",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Tenerife.mp4",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "CONDENSATION [7]",
+    youtube_url: "https://www.youtube.com/watch?v=Jy_G2DbyrEI&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Condensation%20%5B7%5D.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "ANDERMATT // GEMSSTOCK",
+    youtube_url: "https://www.youtube.com/watch?v=J9KUrYSbrtE&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Andermatt%20Gemsstock.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "SOMEWHERE",
+    youtube_url: "https://www.youtube.com/watch?v=VPzKhhH16F0&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SOMEWHERE.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+  {
+    title: "OUR CHRISTMAS",
+    youtube_url: "https://www.youtube.com/watch?v=kZADnEeXTFA&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Our%20Christmas.webm",
+    description:
+      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+  },
+];
+---
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
@@ -27,22 +106,25 @@
 
   .nav-item {
     display: flex;
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
-    height: 6rem; /* Ensure the boxes are tall enough */
-    padding: 0; /* Remove padding */
-    line-height: 1; /* Ensures tight text alignment within the box */
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    padding: 10px;
+    line-height: 1;
+    margin: 6px;
+    flex-direction: column; /* Stacks the text vertically */
   }
 
   .nav-item a {
     color: inherit;
     transition: color 0.3s ease;
     text-align: center;
-    line-height: 1.5; /* Adjust spacing between lines */
+    line-height: 1.1; /* Adjust the spacing between lines when they stack */
   }
-
+  /* Change color on hover */
   .nav-item:hover a {
-    color: #ff2300 !important;
+    color: #cc4e5c;
+    /* Set the desired hover color */
   }
 
   /* Style for "My Work" title */
@@ -65,6 +147,19 @@
     margin: 0 auto; /* Center alignment */
     top: 5vh; /* Move the title down by 10% of the viewport height */
     position: relative; /* Relative positioning to allow top adjustment */
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .z-[100] {
+    position: relative;
+    z-index: 100; /* High z-index to ensure visibility */
+  }
+  .custom-line-height {
+    line-height: 0.8; /* Adjust the value as needed */
   }
 </style>
 
@@ -105,206 +200,75 @@
     loop
   >
     <source
-      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/gears%20fertig%20ohni%20text%20aber%20k%C3%B6rnig.mp4"
+      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SpaceEngine.mp4"
       type="video/mp4"
     />
   </video>
   <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
   <h1
-    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
+    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size custom-line-height"
     id="title"
   >
-    INSANE BRAIN
+    3D ANIMATIONS <br />
+    & VISUALS
   </h1>
 </div>
 
-<div class="relative z-30 bg-white" style="top: -8vh">
-  <div class="pl-2">
-    <p class="text-gray-700 text-6xl italic font-black">
-      WHO AM I AND WTF DO I DO?
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-      Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor
-      sit amet consectetur adipisicing elit.<span class="text-red-800"
-        >pls scroll...</span
-      > Aspernatur, doloremque unde. Aliquid reiciendis, saepe consequatur ratione
-      repellendus obcaecati, debitis ex molestias aut impedit ipsum tempora tempore
-      blanditiis odio dolore maiores. <br />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
-      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
-      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
-      qui.
-      <br />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
-      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
-      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
-      qui. <br />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
-      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
-      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
-      qui. <br />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
-      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
-      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
-      qui.
-    </p>
-  </div>
+<div>
+  {
+    videos.map((vid) => (
+      <Video
+        title={vid.title}
+        youtube_url={vid.youtube_url}
+        hosted_video_url={vid.hosted_video_url}
+        description={vid.description}
+      />
+    ))
+  }
 </div>
-
-<div class="relative my-10 z-30 bg-white" style="top: -8vh">
-  <div class="pl-2">
-    <p class="text-gray-700 text-6xl italic font-black">
-      LALALA LULULU ICH LOS DE TEIL MOL VO SUPERMAVEN USFÜLLE
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-      Supermaven write me scrollcontents scrollcontents scrollcontents er het
-      scho abkackt. also mit eif text ischer müll hahahahahhaha ich gang wieder
-      zrug ufs guete alte Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit. Quidem tempore ipsum repellendus eum ab eius libero doloremque
-      aliquid recusandae laborum, consequuntur nulla consequatur natus,
-      excepturi deleniti totam reprehenderit iusto similique!
-      <br />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
-      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
-      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
-      qui.
-    </p>
-  </div>
-</div>
-
-<div class="relative z-30 bg-white" style="top: -8vh">
-  <div class="pl-2">
-    <p class="text-gray-700 text-6xl italic font-black">
-      SO ICH SOETT EIG SCHOLANG PENNE
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird
-      And if that mockingbird won't sing, Papa's gonna buy you a diamond ring
-      And if that diamond ring turns brass, Papa's gonna buy you a looking glass
-      And if that looking glass gets broke, Papa's gonna buy you a billy goat
-      And if that billy goat won't pull, Papa's gonna buy you a cart and bull
-      And if that cart and bull turn over, Papa's gonna buy you a dog named
-      Rover And if that dog named Rover won't bark Papa's gonna buy you a horse
-      and cart And if that horse and cart fall down, You'll still be the
-      sweetest little baby in town.<br />
-      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird And
-      if that mockingbird won't sing, Papa's gonna buy you a diamond ring And if
-      that diamond ring turns brass, Papa's gonna buy you a looking glass And if
-      that looking glass gets broke, Papa's gonna buy you a billy goat And if that
-      billy goat won't pull, Papa's gonna buy you a cart and bull And if that cart
-      and bull turn over, Papa's gonna buy you a dog named Rover And if that dog
-      named Rover won't bark Papa's gonna buy you a horse and cart And if that horse
-      and cart fall down, You'll still be the sweetest little baby in town.
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird
-      And if that mockingbird won't sing, Papa's gonna buy you a diamond ring
-      And if that diamond ring turns brass, Papa's gonna buy you a looking glass
-      And if that looking glass gets broke, Papa's gonna buy you a billy goat
-      And if that billy goat won't pull, Papa's gonna buy you a cart and bull
-      And if that cart and bull turn over, Papa's gonna buy you a dog named
-      Rover And if that dog named Rover won't bark Papa's gonna buy you a horse
-      and cart And if that horse and cart fall down, You'll still be the
-      sweetest little baby in town.<br />
-      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird And
-      if that mockingbird won't sing, Papa's gonna buy you a diamond ring And if
-      that diamond ring turns brass, Papa's gonna buy you a looking glass And if
-      that looking glass gets broke, Papa's gonna buy you a billy goat And if that
-      billy goat won't pull, Papa's gonna buy you a cart and bull And if that cart
-      and bull turn over, Papa's gonna buy you a dog named Rover And if that dog
-      named Rover won't bark Papa's gonna buy you a horse and cart And if that horse
-      and cart fall down, You'll still be the sweetest little baby in town.
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird
-      And if that mockingbird won't sing, Papa's gonna buy you a diamond ring
-      And if that diamond ring turns brass, Papa's gonna buy you a looking glass
-      And if that looking glass gets broke, Papa's gonna buy you a billy goat
-      And if that billy goat won't pull, Papa's gonna buy you a cart and bull
-      And if that cart and bull turn over, Papa's gonna buy you a dog named
-      Rover And if that dog named Rover won't bark Papa's gonna buy you a horse
-      and cart And if that horse and cart fall down, You'll still be the
-      sweetest little baby in town.<br />
-      Hush, little baby, don't say a word. Papa's gonna buy you a mockingbird And
-      if that mockingbird won't sing, Papa's gonna buy you a diamond ring And if
-      that diamond ring turns brass, Papa's gonna buy you a looking glass And if
-      that looking glass gets broke, Papa's gonna buy you a billy goat And if that
-      billy goat won't pull, Papa's gonna buy you a cart and bull And if that cart
-      and bull turn over, Papa's gonna buy you a dog named Rover And if that dog
-      named Rover won't bark Papa's gonna buy you a horse and cart And if that horse
-      and cart fall down, You'll still be the sweetest little baby in town.
-    </p>
-  </div>
-</div>
-
-<div class="relative my-10 z-30 bg-white" style="top: -8vh">
-  <div class="pl-2">
-    <p class="text-gray-700 text-6xl italic font-black">
-      LALALA LULULU ICH LOS DE TEIL MOL VO SUPERMAVEN SCHRIBE
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3">
-      Supermaven write me scrollcontents scrollcontents scrollcontents er het
-      scho abkackt. also mit eif text ischer müll hahahahahhaha ich gang wieder
-      zrug ufs guete alte Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit. Quidem tempore ipsum repellendus eum ab eius libero doloremque
-      aliquid recusandae laborum, consequuntur nulla consequatur natus,
-      excepturi deleniti totam reprehenderit iusto similique!
-      <br />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sit cupiditate,
-      quia voluptatibus reprehenderit quam. Neque dolores error officia reprehenderit
-      incidunt unde deleniti, commodi veritatis. Vero perferendis recusandae illo
-      qui.
-    </p>
-  </div>
-</div>
-
-<div class="relative z-30 bg-red" style="top: -6vh">
+<div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
   <div>
     <a
-      class="flex text-[#0000EE] mix-blend-difference underline blue justify-center items-center text-6xl"
-      href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-      >TOTALLY TRUSTWORTHY LINK</a
+      class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
+      href="/">BACK HOME</a
     >
   </div>
-  <script>
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".sticky-nav");
-        const stickyOffset = window.innerHeight * 0.25;
-
-        if (window.scrollY >= stickyOffset) {
-          navbar.classList.add("sticky");
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      });
-
-      const title = document.getElementById("title");
-
-      const updateTitleSize = () => {
-        const maxFontSize = 14; // Maximum font size in rem
-        const minMargin = 20; // Minimum margin in pixels
-
-        // Calculate available width with minimum margin
-        const availableWidth = window.innerWidth - 2 * minMargin;
-
-        // Calculate the actual width the title takes at max font size
-        title.style.fontSize = maxFontSize + "rem";
-        const actualWidth = title.scrollWidth;
-
-        if (actualWidth > availableWidth) {
-          // If the title exceeds available width, scale it down
-          const scaleFactor = availableWidth / actualWidth;
-          title.style.fontSize = maxFontSize * scaleFactor + "rem";
-        } else {
-          // Ensure title is at max size if it fits
-          title.style.fontSize = maxFontSize + "rem";
-        }
-      };
-
-      window.addEventListener("resize", updateTitleSize);
-      window.addEventListener("load", updateTitleSize);
-      updateTitleSize();
-    }
-  </script>
 </div>
+
+<script>
+  // Check if the window object is defined to run the script
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".sticky-nav");
+      const stickyOffset = window.innerHeight * 0.25;
+
+      if (window.scrollY >= stickyOffset) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    });
+
+    const title = document.getElementById("title");
+    const updateTitleSize = () => {
+      const maxFontSize = 14; // Maximum font size in rem
+      const minMargin = 20; // Minimum margin in pixels
+      const availableWidth = window.innerWidth - 2 * minMargin; // Calculate available width with minimum margin
+      title.style.fontSize = maxFontSize + "rem";
+      const actualWidth = title.scrollWidth;
+
+      // If the title exceeds available width, scale it down
+      if (actualWidth > availableWidth) {
+        const scaleFactor = availableWidth / actualWidth;
+        title.style.fontSize = maxFontSize * scaleFactor + "rem";
+      } else {
+        // Ensure title is at max size if it fits
+        title.style.fontSize = maxFontSize + "rem";
+      }
+    };
+
+    window.addEventListener("resize", updateTitleSize);
+    window.addEventListener("load", updateTitleSize);
+    updateTitleSize();
+  }
+</script>
