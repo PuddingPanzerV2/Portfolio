@@ -98,22 +98,25 @@ const videos = [
 
   .nav-item {
     display: flex;
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
-    height: 6rem; /* Ensure the boxes are tall enough */
-    padding: 0; /* Remove padding */
-    line-height: 1; /* Ensures tight text alignment within the box */
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    padding: 10px;
+    line-height: 1;
+    margin: 6px;
+    flex-direction: column; /* Stacks the text vertically */
   }
 
   .nav-item a {
     color: inherit;
     transition: color 0.3s ease;
     text-align: center;
-    line-height: 1.5; /* Adjust spacing between lines */
+    line-height: 1.1; /* Adjust the spacing between lines when they stack */
   }
-
+  /* Change color on hover */
   .nav-item:hover a {
-    color: #ff2300 !important;
+    color: #c82848;
+    /* Set the desired hover color */
   }
 
   /* Style for "My Work" title */
@@ -210,6 +213,14 @@ const videos = [
       />
     ))
   }
+</div>
+<div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
+  <div>
+    <a
+      class="flex text-white font-mono justify-center items-center text-8xl"
+      href="/">BACK HOME</a
+    >
+  </div>
 </div>
 
 <script>
