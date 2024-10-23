@@ -1,4 +1,5 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import Video from "../components/Video.astro";
 
 const videos = [
@@ -8,7 +9,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Circuit%20du%20Bourbonnais%204-Day%20Driftevent%20Spring%202024.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "My good friend Louis Grob from Matec-Engineering invited me to come drifting on the \"circuit du Bourbonnais\" with them. The driftevent lasted 4 days and we slept on the parking lot in tents and cars. The event was crazy and I loved every second of it even if I was ill the whole time I was there. The people were all great and kind to each other like a big family. Even if some didn’t even knew the other person they all came along well and just had fun together. Even crashes were just a part of it and I've never felt like they got even slightly angry at each other. If they wreck each other and it was recorded, they review what went wrong but laugh about it at the same time. As I was the first time at such event I had plenty of struggle recording it. The cameras I had with me were the BMPCC6K and my new DJI Pocket Osmo 3, which I bought for more run and gun shots as it is so small and handy. And also to compensate that I don't own a Gimbal for my BMPCC6K yet. It rained again most of the time which made me nervous because we slept on the parking lot on concrete and my tent was 90% electronic stuff and camera gear. Rain and expensive electronics aren't really a good match. But besides that, the Rain also made the recording arduous trying to keep the cameras and batteries dry while trying to hold a shot. On the other side the drift guys were even happy about the rain because they have to drift on wet road to minimize the abrasion of the tires. That way you need less tires and cleaning afterwards as this track normally is used for Kart racing. Usually, they wet the course with a water tank towed by a Tractor. The cooling effect of the rain was also welcome because in these cars you often feel like you are in an oven with too much horsepower. Sitting in these was crazy experience but sadly I couldn’t enjoy it because as I said earlier, I was sick. I constantly felt nauseous and maybe you're familiar with the nausea which you may get when looking at a screen in a car for too long. Now imagine that but in a slinging and skidding driftcar because at the beginning I thought it’s smart to look constantly on the screen to see what I'm recording. Yeah, I've stopped that but the recordings weren’t useable at some parts and then I gave up completely. Because it was just not smart to make me even dizzier in these skidding ovens when I'm nauseous all the time already. And I mean just spectating it and recording from outside isn't bad at all. At the last day we had a dry timespan where they let me go into the racetrack on the inside of a curve after a security briefing. Somebody drove and dropped me there. Standing on the field I've made some great recordings. But then I had again problems because the Tractor was cutting grass right next to me and I have hay fever, but I'm pretty used to the symptoms by now. But it’s still annoying to have to sneeze constantly while recording. First, I started with static tripod shots of the cars passing by. But then soon realized that this isn't the most interesting shot because I wanted more zoomed in detailed shots of the cars drifting. And for that I had to try to follow the cars with my BMPCC6K without inbody stabilization. I also used a lower shutter speed to make the background faster and more natural looking when following the car. I really enjoyed my time there even if I shouldn't have because I was ill. But I enjoyed it which says a lot. Thank you Driftcustoms Lucerne and Circuit du Bourbonnais and everyone participating in it.",
   },
   {
     title: "DRIFTKART ALPHA 100HP",
@@ -16,7 +17,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Brickstra%20Worx%20-%20Driftkart%20Alpha%20100hp%20Honda%20VFR%20750%20engine.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "I've made this one for a school project. It was our thesis in ABU. We built simply said a Go-kart for drifting by taking a kart frame and then make it longer, stronger and slapping a Honda VFR 750ccm 100HP Engine on it.",
   },
   {
     title: "DON'T GET TOO CLOSE TO THE GIANT SPACE ENGINE",
@@ -24,7 +25,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SpaceEngine.mp4",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This is a 3D animation I've made using blender and precision gears plugin. My idea was to combine my love to the mighty space and machines. But as much as I love any kind of mechanical systems, I am also well aware of the dangers of handling them without caution. I have worked a lot with potentially deadly machines in my life and the plot of the videos is essentially my thoughts working with them. It’s all fascinating, fun and games until you make 1 thoughtless move and it’s all over. I'm not scared of machines, but I have deep respect working with them.",
   },
   {
     title: "47 33 38.16N 7 35 26.16E",
@@ -32,15 +33,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/47%2033%2038.16N%207%2035%2026.16E.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    title: "YES, I ALSO PLAY",
-    youtube_url: "https://www.youtube.com/watch?v=ul0DPoqTBNQ&vq=hd2160",
-    hosted_video_url:
-      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/VALORANT%20MONTAGE%20RAZE.webm",
-    description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "The title of this video are the coordinates of Basel where I recorded the footage for this video on my phone as I walked home to the train station at 8 a.m. after a night out raving with my friends. Back at home I've imported the footage into Adobe After Effects and changed some settings to achieve a nice contrasty black and white color correction. Then I've made an alternative version with the blacks and whites switched and some other minor changes. Next, I needed to determine the BPM of the song I chose for this project, then write a small JavaScript code to switch between the two alternative versions of my color corrections at every beat. After having everything working in sync, I started to manipulate individual pixels based on their color values with the Omino Diffusion Plugin. I've made this for every clip individually and worked a lot with keyframes to have dynamic distortions which I could control. The control was needed to manually sync up my footage even further to more complex parts than just the 4 on the floor beat which I've automated already. I wanted to make a video for this song for a long time as it was one of my favorite techno songs since it came out in 2016. All of my videos really only make sense with music on, but this one really only makes sense when watched with music on. So feel free to click on the video above to get to the video with sound and have fun.",
   },
   {
     title: "HOW MY PASSION STARTED (PARTIALLY)",
@@ -48,7 +41,15 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Crime%20Scene%20COD%20Black%20Ops%204%20Sniper%20Montage.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "As teenager I fell in Love with FPS Edits. I just loved the high energy and the perfectly fitting music. My dream of my younger self there was to also make these sick edits, and I didn't had to risk my life as the GoPro Edits I also loved at this time. I could just make these safely at home, the only problem was that I was absolutely terrible at playing the game for at least 2 years after I started playing. I \"trained\" almost daily to get better. After a while I've made 1 somewhat sick clip and some bad trickshots against bots. I was so proud at it at this time but poor and that’s why I straight up recorded my CRT TV with a camera to then Edit it badly in Sony Vegas. It's hilarious how bad the video is when looking at it now, but back then I was really proud of it. But anyways. This isn't the video you're seeing above. It's just the story how I got there. I've made plenty of edits of my games, but I just chose this one because I don't want to spam my Portfolio with these edits as they are often older and not the best as I wasn't as experienced at this time. Additionally, I didn't really work long on these as most of the people in my life didn't like to play games and they weren't really interested as they didn't even know what was happening in the video and how the game works. I didn't upload many of these edits and now stopped almost completely because I'm ashamed. First because I wasn't as good as the other people in these edits and nowadays because I feel how people judge me playing games at my age. Many People still see gaming as childish or time waste. I understand that they dont understand. The gaming world is hard to understand not being in it yourself. With FPS i've trained so many things like reaction time, functioning in high pressure situations, dealing with toxic people, dealing with my own anger, precision and visuomotorik (hand-eye coordination). And I also absolutely hate gun violence and war. But only in real life. I've never understood the people trying to project it into real life. Killing a bunch of code on a screen isn't really the same as ending the life of beautiful person in real life. At the same time people ask me why I have to play games when the real world is so beautiful. Often these people like to play things like FIFA which you could also just go play outside, but I don't want to touch any kind of deadly weapons in real life. I play games to explore things and worlds which aren't possible in the analog world, not to project my real life needs into these worlds. I will proceed to talk about gaming under my next video as it is also about this topic.",
+  },
+  {
+    title: "VALORANT",
+    youtube_url: "https://www.youtube.com/watch?v=ul0DPoqTBNQ&vq=hd2160",
+    hosted_video_url:
+      "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/VALORANT%20MONTAGE%20RAZE.webm",
+    description:
+      "But of course, I also really like the mechanics of this game. It's almost like Counter-Strike, but much more complex because of the agents, each with different special abilities. Every game is unique, as the combination of agents varies, and everyone has their own playstyle and tactics, which you must blend together to play as a team. Then there is the aiming part of the game which is also really important. The main gun you normally buy when having enough credits you kill your enemy with 1 shot to the head, which isn't easy, but you have to, otherwise you lose the fight. As you can see, the gunfights aren't very long because you pretty much die after 1 shot. You don't see the enemy for a long time. 99% of the game is executing you earlier discussed tactic and analyzing the information you gather from your teammates and the sounds the enemies are making without even seeing one of them. It's hard to learn and hard to master in my opinion. So, I was insulted a lot in this game's competitive queue, but I'm not angry about it because it taught me how to deal with toxic people, how to recognize constructive criticism, and how to improve from it. But this was only the case in the competitive queue, in the casual queue you mostly only had pleasant encounters with people as I said earlier. From the normal conversation I've also gathered a lot of practice in my English-speaking skills as it's not my first language. Generally, I've learned most of my English from games. Games teached me so much in live that I am sad that there still is a stigma that games are just a brain rotting activity. I've also learned many other things, like planning and organizing, and I've further developed existing traits such as my creativity in various sandbox games. The sandbox game which I played the most is of course Minecraft which I don't think I have to explain. But I played almost all big sandbox games and created many worlds, but I never made a video about them because it feels unfinished as I could keep working and expanding them almost forever. And I sadly don't have enough time for all of them. Recently I also started playing Satisfactory which is a logistic factory automation sandbox game. It's math. So much math and logic. But I love it because it brings together sandbox games, industry and simple math. I always loved factories and the automation behind them. And now having the opportunity to make such factory myself but without having to deal with real life factory problems like space and money, and as you would expect only scratching on the surface of the process. It’s not getting deep into the process like having to mill things etc. It's usually just a machine which turns various inputs into other various outputs with different ratios which you have to keep in mind when calculating all the resources and machines you will need for your planned factory. I love blending together these processes with my creativity. Anyways I totally lost track writing this and have to find a stop to this which is here.",
   },
   {
     title: "ELECTRIC DISCHARGE",
@@ -56,7 +57,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ELECTRIC%20DISCHARGE.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This was an experiment where I tried to record lightning with my BMPCC6K. I then mirrored the footage I took and manually synced the lightning with the music. After that, I added text and experimented with the blending modes so the text would light up with the bright flash and remain invisible in the dark.",
   },
   {
     title: "BETTMERALP 2020",
@@ -64,164 +65,166 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Bettmeralp%202020.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "A video I recorded on a skiing holiday with my friends in Bettmeralp in 2020. We had a lot of fun, and I was recording with my horrible GoPro Fusion. There's not much else to say about it.",
   },
 ];
 ---
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+<Layout title="DESTRUCTION">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-  .sticky-nav {
-    position: absolute;
-    top: 20vh;
-    width: 100%;
-    z-index: 50;
-    background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
-    color: white;
-    padding: 0rem;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      box-shadow 0.3s ease,
-      border-bottom 0.3s ease; /* Transition for shadow and border */
-  }
+    .sticky-nav {
+      position: absolute;
+      top: 20vh;
+      width: 100%;
+      z-index: 50;
+      background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
+      color: white;
+      padding: 0rem;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        border-bottom 0.3s ease; /* Transition for shadow and border */
+    }
 
-  .sticky-nav.sticky {
-    position: fixed;
-    top: 0;
-    background-color: white; /* Change to white when sticky */
-    color: black; /* Text color change for visibility */
-    border-bottom: 3px solid black; /* Thicker black border at the bottom */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
-  }
+    .sticky-nav.sticky {
+      position: fixed;
+      top: 0;
+      background-color: white; /* Change to white when sticky */
+      color: black; /* Text color change for visibility */
+      border-bottom: 3px solid black; /* Thicker black border at the bottom */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
+    }
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 6rem;
-    padding: 10px;
-    line-height: 1;
-    margin: 6px;
-    flex-direction: column; /* Stacks the text vertically */
-  }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 6rem;
+      padding: 10px;
+      line-height: 1;
+      margin: 6px;
+      flex-direction: column; /* Stacks the text vertically */
+    }
 
-  .nav-item a {
-    color: inherit;
-    transition: color 0.3s ease;
-    text-align: center;
-    line-height: 1.1; /* Adjust the spacing between lines when they stack */
-  }
-  /* Change color on hover */
-  .nav-item:hover a {
-    color: #cc4e5c;
-    /* Set the desired hover color */
-  }
+    .nav-item a {
+      color: inherit;
+      transition: color 0.3s ease;
+      text-align: center;
+      line-height: 1.1; /* Adjust the spacing between lines when they stack */
+    }
+    /* Change color on hover */
+    .nav-item:hover a {
+      color: #cc4e5c;
+      /* Set the desired hover color */
+    }
 
-  /* Style for "My Work" title */
-  .my-work-title {
-    position: absolute;
-    top: 12vh; /* Move the title down by 20% of the viewport */
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    z-index: 40;
-  }
+    /* Style for "My Work" title */
+    .my-work-title {
+      position: absolute;
+      top: 12vh; /* Move the title down by 20% of the viewport */
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      z-index: 40;
+    }
 
-  /* Custom text size for title */
-  .text-custom-size {
-    white-space: nowrap; /* Prevent text from wrapping */
-    font-size: 14rem; /* Set a fixed font size */
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Center alignment */
-    top: 5vh; /* Move the title down by 10% of the viewport height */
-    position: relative; /* Relative positioning to allow top adjustment */
-  }
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    /* Custom text size for title */
+    .text-custom-size {
+      white-space: nowrap; /* Prevent text from wrapping */
+      font-size: 14rem; /* Set a fixed font size */
+      text-align: center; /* Center the text */
+      margin: 0 auto; /* Center alignment */
+      top: 5vh; /* Move the title down by 10% of the viewport height */
+      position: relative; /* Relative positioning to allow top adjustment */
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .z-[100] {
-    position: relative;
-    z-index: 100; /* High z-index to ensure visibility */
-  }
-</style>
+    .z-[100] {
+      position: relative;
+      z-index: 100; /* High z-index to ensure visibility */
+    }
+  </style>
 
-<!-- New "My Work" title -->
-<h2 class="my-work-title">MY WORK</h2>
+  <!-- New "My Work" title -->
+  <h2 class="my-work-title">MY WORK</h2>
 
-<nav class="sticky-nav">
-  <ul class="flex justify-between items-center w-full">
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/CALMNESS">CALMNESS</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/DESTRUCTION">DESTRUCTION</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/3D-ANIMATIONS-AND-VISUALS">
-        <span>3D ANIMATIONS</span>
-        <span>& VISUALS</span>
-      </a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/MADE-ON-AND-WITH-THE-PHONE">
-        <span>MADE WITH &</span>
-        <span>ON THE PHONE</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="sticky-nav">
+    <ul class="flex justify-between items-center w-full">
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/CALMNESS">CALMNESS</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/DESTRUCTION">DESTRUCTION</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/3D-ANIMATIONS-AND-VISUALS">
+          <span>3D ANIMATIONS</span>
+          <span>& VISUALS</span>
+        </a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/MADE-ON-AND-WITH-THE-PHONE">
+          <span>MADE WITH &</span>
+          <span>ON THE PHONE</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-<div class="relative h-[90vh] w-full flex justify-center items-center">
-  <video
-    class="fixed top-0 left-0 w-full h-full object-cover z-10"
-    autoplay
-    muted
-    loop
-  >
-    <source
-      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/BBN%20web-.mp4"
-      type="video/mp4"
-    />
-  </video>
-  <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
-  <h1
-    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
-    id="title"
-  >
-    DESTRUCTION
-  </h1>
-</div>
-
-<div>
-  {
-    videos.map((vid) => (
-      <Video
-        title={vid.title}
-        youtube_url={vid.youtube_url}
-        hosted_video_url={vid.hosted_video_url}
-        description={vid.description}
-      />
-    ))
-  }
-</div>
-<div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
-  <div>
-    <a
-      class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
-      href="/">BACK HOME</a
+  <div class="relative h-[90vh] w-full flex justify-center items-center">
+    <video
+      class="fixed top-0 left-0 w-full h-full object-cover z-10"
+      autoplay
+      muted
+      loop
     >
+      <source
+        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/BBN%20web-.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
+    <h1
+      class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
+      id="title"
+    >
+      DESTRUCTION
+    </h1>
   </div>
-</div>
+
+  <div>
+    {
+      videos.map((vid) => (
+        <Video
+          title={vid.title}
+          youtube_url={vid.youtube_url}
+          hosted_video_url={vid.hosted_video_url}
+          description={vid.description}
+        />
+      ))
+    }
+  </div>
+  <div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
+    <div>
+      <a
+        class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
+        href="/">BACK HOME</a
+      >
+    </div>
+  </div>
+</Layout>
 
 <script>
   // Check if the window object is defined to run the script

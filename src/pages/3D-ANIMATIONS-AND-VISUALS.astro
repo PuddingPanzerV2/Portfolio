@@ -1,4 +1,5 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import Video from "../components/Video.astro";
 
 const videos = [
@@ -16,7 +17,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/%5BANOMALY%5D%20-%20Looped.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "A more personal video. I've made this using Blender. In this video I wanted to express my feelings I have about not being normal but wanting to while it feels like everyone today is talking about being different and how great it is. Don't understand me wrong. Not everything about being different sucks, there are a lot of positive traits in which I’m different, but also bad ones. Not being the norm means a lot of difficulties in life because people often don't understand me and what I'm doing and almost all the things on this world are of course made for the norm as you please the most amount of people at the same time like this. I often overexplain myself because I want to be sure that person x understands my chaotic thought process because I often confuse people with my words and actions until I explain myself. So, I often overexplain myself before I can confuse them which also confuses them sometimes. I look at things and problems in different ways than others and have very unconventional specific interests. That also means I can't really share my enthusiasm for many things as it’s almost impossible to find someone with the same unconventional and specific interests.",
   },
   {
     title: "YOUR LAST HEARTBEATS IN THE SIMULATION",
@@ -24,7 +25,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/YOUR%20LAST%20HEARTBEATS%20IN%20THE%20SIMULATION.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "After I've listened to the song you hearing my brain instantly imagined a video to it as always. I saw the EKG line dancing to the beeps, the setting, the camera movement, the colorpallete etc. The only problem: I haven't used any 3D modeling software in years. But not having a clue about something never held me back trying it out at least. So, I got to work, downloaded blender and started messing around with it. I had to refresh my knowledge about 3D animation and learn to work with nodes as this wasn't a thing when I last used such program. I struggled a lot with the program at the beginning but after a while I understood the parts which I needed for this video and could start experimenting with them. I had a lot of fun until I had to render the video. As I barely had any experience in 3D animation yet. My testrenders were really noisy and slow. After a while I started to like the noisiness of the reflection from the emitted light. But I also ran out of nerves, so I decided to fully render my project, despite the bad optimization and noisiness. It took 7 whole days to render these 50 seconds where I couldn't use my pc for anything else. At the beginning of the render process, the individual frames didn’t take long to render. But after about a day, the time for each frame increased as more elements, like the mountains, appeared in the viewport. Naturally, this took more time to calculate since there was more visible content on the screen. However, I was already too deep into the render to throw away the current progress and attempt to optimize my chaotic project. But I'm proud of it anyways.",
   },
   {
     title: "EXPERIMENT #1",
@@ -32,7 +33,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Experiment%20%231.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This one I've made in After Effects with the Trapcode plugin. With this plugin you don't really model things like in a 3D software like blender. It's more just math equations influencing other math equations. But you can also import 3D models as .obj filed to then manipulate them with this plugin. I used Trapcode Soundkeys to make the elements move to different frequencies. With Soundkeys, you can define a frequency spectrum and output that spectrum as a specific range of values in the form of keyframes. I really love Trapcode, but it’s way too expensive to just play around with for fun, so I sadly don’t own the license for the plugin anymore.",
   },
   {
     title: "[TIMELAPSE ON CANVAS]",
@@ -40,7 +41,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/%5B%20TIMELAPSE%20ON%20CANVAS%20%5D.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Here I had the Idea of animating an art museum in blender but the pictures are timelapses from the real world. I just used a random timelapse I wasn't using for anything else for this test. While working on it I had the idea of having a marble globe as levitating statue thingy which is exploding as metaphor for how we are destroying our own beautiful world. But to be honest, I just thought it would look kinda cool.",
   },
   {
     title: "REACTIVE 3D-THINGY AUDIOVISUALIZER",
@@ -48,7 +49,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Audio%20Visualation%20CloZee%20-%20Falcon%20(Dropout%20Marsh%20Remix)%20%5BOtodayo%20Records%5D%20By%20Pudding%20Panzer.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This is also a video I've made playing around with the Trapcode plugin in After Effects. Can't give you new insights as I have already written everything interesting about Trapcode in my \"Experiment #1\" video.",
   },
   {
     title: "REACTIVE VINYL AUDIOVISUALIZER",
@@ -56,11 +57,12 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Outside%20City%20-%20Housetrain.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Here you can see an audiovisualizer I made for a friend a long time ago. I've made the Soundwavebarthings with Trapcode. The picture on the vinyl was made on my phone playing around with different photo editing apps. Then I downloaded a random picture of a vinyl from google which I then just rotated around its own axis.",
   },
 ];
 ---
 
+<Layout title="3D ANIMATIONS & VISUALS" />
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 

@@ -1,5 +1,6 @@
 ---
 import Video from "../components/Video.astro";
+import Layout from "../layouts/Layout.astro";
 
 const videos = [
   {
@@ -8,7 +9,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/BASEL.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Here, I attempted to create digital drone shots using Google Earth Studio, capturing footage over Basel. I love this city. It's the nearest big city to where I live, and I have countless memories tied to it. I tried to bring in the feeling I have walking through the city and thinking about the memories. For the nostalgic feeling I used different filters and overlays to get the CRT TV look. This look also helped conceal the fact that this isn't real drone footage. By reducing detail, it looks more realistic because you don't see as much details which you would need to determine if the footage is real or not. Pretty much the same technic used for all these fake UFO, alien and ghost sighting videos you see distributed around the internet.",
   },
   {
     title: "MEMPHIS",
@@ -16,7 +17,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/MEMPHIS%20WEB.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "This is almost the same as my Basel video. I also used Google Earth Studio to create a Droneshot and then manipulated the footage to the point where it had the CRT TV look. But this time I only used 1 orbital shot of Memphis. I used Memphis because it is home to Phonk. The Genre of the music I used in this Video. It's a little homage to this Genre and the city.",
   },
   {
     title: "ANIMATED THUMBNAIL",
@@ -24,7 +25,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/thumbnail%20guet%20fertig%20video.mp4",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Here you can see the thumbnail I've made for Instagram for my animated Spaceengine video. I liked it so much that I then made an animated version of the thumbnail. I really made this for nothing because I don't know any place where you can upload animated thumbnails. But I still like it.",
   },
   {
     title: "REACTIVE VINTAGE AUDIOVISUALIZER",
@@ -32,7 +33,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/TERROR%20REID%20-%20UPPERCUTS%20x%20Fat%20Albert%20and%20the%20Cosby%20Kids.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This is a really old video which I made in Adobe After Effects. I've had a plugin which made automatic keyframes based on the frequency. You could output a span from number x to number z for a frequency spectrum you determine. I used these keyframes then for the value of the distortion. Then I put on some more layers which get distorted differently by different frequencies. The other things I've done to the video are not that interesting or self-explanatory. I've chosen this comic because I thought it fits perfectly to the project and music.",
   },
   {
     title: "47 33 38.16N 7 35 26.16E",
@@ -40,7 +41,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/47%2033%2038.16N%207%2035%2026.16E.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "The title of this video are the coordinates of Basel where I recorded the footage for this video on my phone as I walked home to the train station at 8 a.m. after a night out raving with my friends. Back at home I've imported the footage into Adobe After Effects and changed some settings to achieve a nice contrasty black and white color correction. Then I've made an alternative version with the blacks and whites switched and some other minor changes. Next, I needed to determine the BPM of the song I chose for this project, then write a small JavaScript code to switch between the two alternative versions of my color corrections at every beat. After having everything working in sync, I started to manipulate individual pixels based on their color values with the Omino Diffusion Plugin. I've made this for every clip individually and worked a lot with keyframes to have dynamic distortions which I could control. The control was needed to manually sync up my footage even further to more complex parts than just the 4 on the floor beat which I've automated already. I wanted to make a video for this song for a long time as it was one of my favorite techno songs since it came out in 2016. All of my videos really only make sense with music on, but this one really only makes sense when watched with music on. So feel free to click on the video above to get to the video with sound and have fun.",
   },
   {
     title: "ELECTRIC DISCHARGE",
@@ -48,7 +49,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ELECTRIC%20DISCHARGE.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This was an experiment where I tried to record lightning with my BMPCC6K. I then mirrored the footage I took and manually synced the lightning with the music. After that, I added text and experimented with the blending modes so the text would light up with the bright flash and remain invisible in the dark.",
   },
   {
     title: "IDK",
@@ -56,164 +57,166 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/(%E3%83%84).webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Idk what to say about this one. I just recorded a Random Ferrari and Nissan GT-R while we were driving home from a hike. I made this video simply because I found the song hilarious, especially when the rapper becomes impossible to understand at one point.",
   },
 ];
 ---
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+<Layout title="EXPERIMENTAL">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-  .sticky-nav {
-    position: absolute;
-    top: 20vh;
-    width: 100%;
-    z-index: 50;
-    background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
-    color: white;
-    padding: 0rem;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      box-shadow 0.3s ease,
-      border-bottom 0.3s ease; /* Transition for shadow and border */
-  }
+    .sticky-nav {
+      position: absolute;
+      top: 20vh;
+      width: 100%;
+      z-index: 50;
+      background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
+      color: white;
+      padding: 0rem;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        border-bottom 0.3s ease; /* Transition for shadow and border */
+    }
 
-  .sticky-nav.sticky {
-    position: fixed;
-    top: 0;
-    background-color: white; /* Change to white when sticky */
-    color: black; /* Text color change for visibility */
-    border-bottom: 3px solid black; /* Thicker black border at the bottom */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
-  }
+    .sticky-nav.sticky {
+      position: fixed;
+      top: 0;
+      background-color: white; /* Change to white when sticky */
+      color: black; /* Text color change for visibility */
+      border-bottom: 3px solid black; /* Thicker black border at the bottom */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
+    }
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 6rem;
-    padding: 10px;
-    line-height: 1;
-    margin: 6px;
-    flex-direction: column; /* Stacks the text vertically */
-  }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 6rem;
+      padding: 10px;
+      line-height: 1;
+      margin: 6px;
+      flex-direction: column; /* Stacks the text vertically */
+    }
 
-  .nav-item a {
-    color: inherit;
-    transition: color 0.3s ease;
-    text-align: center;
-    line-height: 1.1; /* Adjust the spacing between lines when they stack */
-  }
-  /* Change color on hover */
-  .nav-item:hover a {
-    color: #cc4e5c;
-    /* Set the desired hover color */
-  }
+    .nav-item a {
+      color: inherit;
+      transition: color 0.3s ease;
+      text-align: center;
+      line-height: 1.1; /* Adjust the spacing between lines when they stack */
+    }
+    /* Change color on hover */
+    .nav-item:hover a {
+      color: #cc4e5c;
+      /* Set the desired hover color */
+    }
 
-  /* Style for "My Work" title */
-  .my-work-title {
-    position: absolute;
-    top: 12vh; /* Move the title down by 20% of the viewport */
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    z-index: 40;
-  }
+    /* Style for "My Work" title */
+    .my-work-title {
+      position: absolute;
+      top: 12vh; /* Move the title down by 20% of the viewport */
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      z-index: 40;
+    }
 
-  /* Custom text size for title */
-  .text-custom-size {
-    white-space: nowrap; /* Prevent text from wrapping */
-    font-size: 14rem; /* Set a fixed font size */
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Center alignment */
-    top: 5vh; /* Move the title down by 10% of the viewport height */
-    position: relative; /* Relative positioning to allow top adjustment */
-  }
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    /* Custom text size for title */
+    .text-custom-size {
+      white-space: nowrap; /* Prevent text from wrapping */
+      font-size: 14rem; /* Set a fixed font size */
+      text-align: center; /* Center the text */
+      margin: 0 auto; /* Center alignment */
+      top: 5vh; /* Move the title down by 10% of the viewport height */
+      position: relative; /* Relative positioning to allow top adjustment */
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .z-[100] {
-    position: relative;
-    z-index: 100; /* High z-index to ensure visibility */
-  }
-</style>
+    .z-[100] {
+      position: relative;
+      z-index: 100; /* High z-index to ensure visibility */
+    }
+  </style>
 
-<!-- New "My Work" title -->
-<h2 class="my-work-title">MY WORK</h2>
+  <!-- New "My Work" title -->
+  <h2 class="my-work-title">MY WORK</h2>
 
-<nav class="sticky-nav">
-  <ul class="flex justify-between items-center w-full">
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/CALMNESS">CALMNESS</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/DESTRUCTION">DESTRUCTION</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/3D-ANIMATIONS-AND-VISUALS">
-        <span>3D ANIMATIONS</span>
-        <span>& VISUALS</span>
-      </a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/MADE-ON-AND-WITH-THE-PHONE">
-        <span>MADE WITH &</span>
-        <span>ON THE PHONE</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="sticky-nav">
+    <ul class="flex justify-between items-center w-full">
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/CALMNESS">CALMNESS</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/DESTRUCTION">DESTRUCTION</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/3D-ANIMATIONS-AND-VISUALS">
+          <span>3D ANIMATIONS</span>
+          <span>& VISUALS</span>
+        </a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/MADE-ON-AND-WITH-THE-PHONE">
+          <span>MADE WITH &</span>
+          <span>ON THE PHONE</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-<div class="relative h-[90vh] w-full flex justify-center items-center">
-  <video
-    class="fixed top-0 left-0 w-full h-full object-cover z-10"
-    autoplay
-    muted
-    loop
-  >
-    <source
-      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/47%2033%2038.16N%207%2035%2026.16E.webm"
-      type="video/mp4"
-    />
-  </video>
-  <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
-  <h1
-    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
-    id="title"
-  >
-    EXPERIMENTAL
-  </h1>
-</div>
-
-<div>
-  {
-    videos.map((vid) => (
-      <Video
-        title={vid.title}
-        youtube_url={vid.youtube_url}
-        hosted_video_url={vid.hosted_video_url}
-        description={vid.description}
-      />
-    ))
-  }
-</div>
-<div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
-  <div>
-    <a
-      class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
-      href="/">BACK HOME</a
+  <div class="relative h-[90vh] w-full flex justify-center items-center">
+    <video
+      class="fixed top-0 left-0 w-full h-full object-cover z-10"
+      autoplay
+      muted
+      loop
     >
+      <source
+        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/47%2033%2038.16N%207%2035%2026.16E.webm"
+        type="video/mp4"
+      />
+    </video>
+    <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
+    <h1
+      class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
+      id="title"
+    >
+      EXPERIMENTAL
+    </h1>
   </div>
-</div>
+
+  <div>
+    {
+      videos.map((vid) => (
+        <Video
+          title={vid.title}
+          youtube_url={vid.youtube_url}
+          hosted_video_url={vid.hosted_video_url}
+          description={vid.description}
+        />
+      ))
+    }
+  </div>
+  <div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
+    <div>
+      <a
+        class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
+        href="/">BACK HOME</a
+      >
+    </div>
+  </div>
+</Layout>
 
 <script>
   // Check if the window object is defined to run the script

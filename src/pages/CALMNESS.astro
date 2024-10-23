@@ -1,4 +1,5 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import Video from "../components/Video.astro";
 
 const videos = [
@@ -8,7 +9,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Muttenalp.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Here 2 friends and I hiked up to the Muttsehütte in Switzerland. It was the first time I had brought my Black Magic Pocket Cinema camera to a hike. As we started the hike too late, we had to hurry more than I liked. I couldn't take much time to film things because of that. Hiking down, I slipped a little bit, almost faceplanted a rock and distributed my camera gear in the beautiful meadow because I had to start running while still filming things to catch the last cable car down to the valley. We also had to completely run through a 2 km long tunnel at the end of the hike and it felt like a scene in a movie because I said to my friends that I couldn't catch up anymore as I had so much camera gear with me and was much less in shape than my friends. But they sacrificed themselves to carry some of my stuff while running as I was about to die. 10/10 Experience.",
   },
   {
     title: "ALICANTE",
@@ -16,7 +17,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ALICANTE.webm",
     description:
-      "Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "I've made this video to show people Alicante and the vicinity through my eyes and mood. I really love this part of Spain as I partially grew up with it. My grandparents lived in Muchamiel (Mutxamel) and we went there every summer for some weeks. I just loved every minute I spent there and am really thankful that I could experience all that. So, I was really happy that I finally could capture some of its beauty with a somewhat decent camera (BMPCC6K). I already took my past cameras to Spain every time we went. But never uploaded most of it because I wasn't fully happy or it was just experimental stuff. The quality was also not great with my old cameras. I began filming with a GoPro Hero 4 with no screen at all. Then I bought a Canon EOS 70D, which is more of a camera for photography than videography. Later I sold this camera to buy a 7D, which was again more a camera for photography than videography. The BMPCC6K isn't the best too because of missing autofocus support etc. But it's finally a camera meant for videography, and I am damn happy with it, even when it's hard sometimes with the manual focus and the additional battery I have to carry.",
   },
   {
     title: "MATEC x DRIFTANIC",
@@ -24,7 +25,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/MATEC%20x%20DRIFTANIC%20v3.0%20Volvo%20945.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "In this video, you can see the insane work of Louis Grob from Matec Engineering. He built this car for @driftanic and this was the first time they tested the Volvo on the track. But as it happened almost every time this year, it started to rain as I started to film and I was struggling to record things while keeping my gear dry. But I made the best of the footage I got, and one scene was even recorded by Louis Grob with his mobile phone because it was just a clean line, and sadly, I wasn't recording at the time. But I had to include it even if the quality wasn't that good. Anyways, big thanks to these guys for bringing me with them for such things.",
   },
   {
     title: "TENERIFE",
@@ -32,7 +33,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Tenerife.mp4",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "One of my brothers and I went to Tenerife to calm down. At this time, the cameras I owned were a Canon EOS 7D and a terrible to work with GoPro 360. I had both with me and just recorded some random moments with it as we enjoyed our time.",
   },
   {
     title: "CONDENSATION [2]",
@@ -40,7 +41,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/CONDENSATION%20%5B2%5D.webm",
     description:
-      "Another aproach to Timelapses of the sky. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This is one of my more experimental videos where I just try out things, wondering how they will look when I try various approaches. After some time experimenting, I chose one version where I will keep working on. As I love chaotic systems and especially nature, I tried to capture a closer look at the transformation of clouds over time. For this, I set up my BMPCC6K on a tripod, attached an additional battery, zoomed into a spot where I thought the interesting stuff was gonna happen, and then waited 30 minutes to 3 hours for each shot. I used an unconventional song for such a video because I thought it really fit well.",
   },
   {
     title: "CONDENSATION [7]",
@@ -48,7 +49,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Condensation%20%5B7%5D.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This one is pretty much the same idea as the other condensation video, but this time I was in Sigriswil, just hanging around with my camera and capturing various moments.",
   },
   {
     title: "HERE IS THE SIGN YOU'VE BEEN WAITING FOR",
@@ -56,7 +57,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/HERE%20IS%20THE%20SIGN%20YOUVE%20BEEN%20WAITING%20FOR.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Here you can see a video of the first footage I took with the BMPCC6K as I tested the camera before buying it from friends at RandomAccesTV. For testing, I took it with me for a night drive on my skateboard, capturing Basel at night. Later, I visited my brother's apartment and took some shots of his furniture and decoration there, as he and his fiancée have really good taste in my opinion.",
   },
   {
     title: "I COLLECT LIGHTNINGS",
@@ -64,7 +65,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/I%20COLLECT%20LIGHTNINGS.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This is pretty much a collection of lightning footage I took while being in thunderstorms in two different locations in Switzerland. Once I was at home, and the other time in Sigriswil on the mountains. Being part of the big chaotic system called weather, lightning is something I really adore. I love capturing them to then manipulate time later at home to watch what really happens in the small fraction of a second when it all occurs. Even if the weather is technically bad, thunderstorms are something mighty and mildly scary while being super relaxing. I love them.",
   },
   {
     title: "NIGHTLAPSE CAMERASLIDER TEST",
@@ -72,7 +73,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Cameraslider%20Test%20N%C2%BA%201%20Nightlapse%20WEB.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "A very old video where I tested my motorized camera slider by making a nightlapse with my Canon EOS 70D, which I had at the time. I programmed a path, then captured some long-exposure photos every few seconds using a timing device hooked up to the camera. I also recorded the setup with another nightlapse running on my annoying GoPro Fusion.",
   },
   {
     title: "OUR CHRISTMAS",
@@ -80,7 +81,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Our%20Christmas.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "I couldn't get enough of my new BMPCC6K, so I recorded our family Christmas dinner with it. There's not much else to say about it.",
   },
   {
     title: "ANDERMATT // GEMSSTOCK",
@@ -88,7 +89,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Andermatt%20Gemsstock.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "I was so much in love with the BMPCC6K that I even took it with me while skiing. To be honest, it wasn’t the smartest idea because the camera has no stabilization at all and no autofocus. Additionally, temperatures dropped to -20°C, and recording with gloves was almost impossible, so I decided to not use them. I also spent like 1-2 hours at the peak to record some of the surroundings. I had to stop because I couldn’t move or feel my fingers anymore. When I was at home reviewing my footage, I started laughing so hard because the footage where I was skiing while recording was so horrendously shaky. But I wasn’t too sad because I now had the knowledge that this absolutely isn’t a job for this camera with my current gear.",
   },
   {
     title: "LET ME TRANQUIL",
@@ -96,7 +97,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/LET%20ME%20TRANQUIL.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This is an older one where two friends and I went hiking in Handegg. I still think it's hilarious when you read the name in English, and it sounds like an alternative name for an American football. Some parts of the trails were completely covered in snow. I took my drone and the terrible GoPro Fusion with me for this journey. It was a chaotic but beautiful day. With this video, I wanted to express the clash between my constant urge to calm down and not being able to because I also constantly want to do and create things. That’s also the reason why the video has two different parts with different moods.",
   },
   {
     title: "SOMEWHERE",
@@ -104,7 +105,7 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/SOMEWHERE.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Here I went full-on GoPro Fusion. I recorded the footage on a two-day hike from Iffigenalp over the Schnidejoch next to the Chilchligletscher to the Wildhornhütte SAC, where we spent the night, to then continue the next day to Betelberg in Lenk. From there, we rode down to the valley with some mountain scooters. It’s a very nice hike that I’m gonna repeat for sure. But I already had a way-too-heavy backpack without camera gear. I only took the horrible GoPro Fusion with me and recorded some random stuff and timelapses along the way. You’ve surely noticed my slightly massive hate for the GoPro Fusion by now. Let me explain: First, I have to stitch together the footage from both lenses of the 360° camera with a GoPro application and render it to a weird-looking flat 360° image, which wastes a lot of time. Then, I have to import it to Premiere Pro or After Effects to work with the footage using a GoPro plugin inside the programs. The GoPro plugin also works with keyframes to manipulate the 360° footage to your liking. But the keyframes sometimes just completely ignore my inputs and do their own thing. This often results in being unable to exactly position and move the 360° footage as I like. Encountering these bugs almost every second makes the workflow terrible. The software support even got stopped because they discontinued the GoPro Fusion, and I think I know why. But besides that, it was a fun project and hike.",
   },
   {
     title: "PAREMA CRYOSHRINK-PROCESS",
@@ -112,164 +113,165 @@ const videos = [
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Parema%20stickstoff%20FERTIG%201_1.webm",
     description:
-      " MATEC x DRIFTANIC v3.0 // Volvo 945 - Is a Video I made for a Friend drifting his car which was made by another friend. Duh. Videobeschribig do ahne. Hello I'm at least way to fuul zum was schribe darum: Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "This is a video I've made at a place where I worked as a Polymechanic. It’s about cryoshrinking—a process where you shrink the smaller inner part of two different parts (in this case with nitrogen). Then you put them together and let the cold part warm up to room temperature again and expand to its original size to create a strong mechanical coupling. I took this footage with my Canon EOS 7D. I think it was the last time I used this camera to film.",
   },
 ];
 ---
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+<Layout title="Calmness">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-  .sticky-nav {
-    position: absolute;
-    top: 20vh;
-    width: 100%;
-    z-index: 50;
-    background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
-    color: white;
-    padding: 0rem;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      box-shadow 0.3s ease,
-      border-bottom 0.3s ease; /* Transition for shadow and border */
-  }
+    .sticky-nav {
+      position: absolute;
+      top: 20vh;
+      width: 100%;
+      z-index: 50;
+      background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
+      color: white;
+      padding: 0rem;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        border-bottom 0.3s ease; /* Transition for shadow and border */
+    }
 
-  .sticky-nav.sticky {
-    position: fixed;
-    top: 0;
-    background-color: white; /* Change to white when sticky */
-    color: black; /* Text color change for visibility */
-    border-bottom: 3px solid black; /* Thicker black border at the bottom */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
-  }
+    .sticky-nav.sticky {
+      position: fixed;
+      top: 0;
+      background-color: white; /* Change to white when sticky */
+      color: black; /* Text color change for visibility */
+      border-bottom: 3px solid black; /* Thicker black border at the bottom */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
+    }
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 6rem;
-    padding: 10px;
-    line-height: 1;
-    margin: 6px;
-    flex-direction: column; /* Stacks the text vertically */
-  }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 6rem;
+      padding: 10px;
+      line-height: 1;
+      margin: 6px;
+      flex-direction: column; /* Stacks the text vertically */
+    }
 
-  .nav-item a {
-    color: inherit;
-    transition: color 0.3s ease;
-    text-align: center;
-    line-height: 1.1; /* Adjust the spacing between lines when they stack */
-  }
-  /* Change color on hover */
-  .nav-item:hover a {
-    color: #cc4e5c;
-    /* Set the desired hover color */
-  }
+    .nav-item a {
+      color: inherit;
+      transition: color 0.3s ease;
+      text-align: center;
+      line-height: 1.1; /* Adjust the spacing between lines when they stack */
+    }
+    /* Change color on hover */
+    .nav-item:hover a {
+      color: #cc4e5c;
+      /* Set the desired hover color */
+    }
 
-  /* Style for "My Work" title */
-  .my-work-title {
-    position: absolute;
-    top: 12vh; /* Move the title down by 20% of the viewport */
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    z-index: 40;
-  }
+    /* Style for "My Work" title */
+    .my-work-title {
+      position: absolute;
+      top: 12vh; /* Move the title down by 20% of the viewport */
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      z-index: 40;
+    }
 
-  /* Custom text size for title */
-  .text-custom-size {
-    white-space: nowrap; /* Prevent text from wrapping */
-    font-size: 14rem; /* Set a fixed font size */
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Center alignment */
-    top: 5vh; /* Move the title down by 10% of the viewport height */
-    position: relative; /* Relative positioning to allow top adjustment */
-  }
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    /* Custom text size for title */
+    .text-custom-size {
+      white-space: nowrap; /* Prevent text from wrapping */
+      font-size: 14rem; /* Set a fixed font size */
+      text-align: center; /* Center the text */
+      margin: 0 auto; /* Center alignment */
+      top: 5vh; /* Move the title down by 10% of the viewport height */
+      position: relative; /* Relative positioning to allow top adjustment */
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .z-[100] {
-    position: relative;
-    z-index: 100; /* High z-index to ensure visibility */
-  }
-</style>
+    .z-[100] {
+      position: relative;
+      z-index: 100; /* High z-index to ensure visibility */
+    }
+  </style>
+  <!-- New "My Work" title -->
+  <h2 class="my-work-title">MY WORK</h2>
 
-<!-- New "My Work" title -->
-<h2 class="my-work-title">MY WORK</h2>
+  <nav class="sticky-nav">
+    <ul class="flex justify-between items-center w-full">
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/CALMNESS">CALMNESS</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/DESTRUCTION">DESTRUCTION</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/3D-ANIMATIONS-AND-VISUALS">
+          <span>3D ANIMATIONS</span>
+          <span>& VISUALS</span>
+        </a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/MADE-ON-AND-WITH-THE-PHONE">
+          <span>MADE WITH &</span>
+          <span>ON THE PHONE</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-<nav class="sticky-nav">
-  <ul class="flex justify-between items-center w-full">
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/CALMNESS">CALMNESS</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/DESTRUCTION">DESTRUCTION</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/3D-ANIMATIONS-AND-VISUALS">
-        <span>3D ANIMATIONS</span>
-        <span>& VISUALS</span>
-      </a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/MADE-ON-AND-WITH-THE-PHONE">
-        <span>MADE WITH &</span>
-        <span>ON THE PHONE</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<div class="relative h-[90vh] w-full flex justify-center items-center">
-  <video
-    class="fixed top-0 left-0 w-full h-full object-cover z-10"
-    autoplay
-    muted
-    loop
-  >
-    <source
-      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ALICANTE.webm"
-      type="video/mp4"
-    />
-  </video>
-  <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
-  <h1
-    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
-    id="title"
-  >
-    CALMNESS
-  </h1>
-</div>
-
-<div>
-  {
-    videos.map((vid) => (
-      <Video
-        title={vid.title}
-        youtube_url={vid.youtube_url}
-        hosted_video_url={vid.hosted_video_url}
-        description={vid.description}
-      />
-    ))
-  }
-</div>
-<div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
-  <div>
-    <a
-      class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
-      href="/">BACK HOME</a
+  <div class="relative h-[90vh] w-full flex justify-center items-center">
+    <video
+      class="fixed top-0 left-0 w-full h-full object-cover z-10"
+      autoplay
+      muted
+      loop
     >
+      <source
+        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/ALICANTE.webm"
+        type="video/mp4"
+      />
+    </video>
+    <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
+    <h1
+      class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
+      id="title"
+    >
+      CALMNESS
+    </h1>
   </div>
-</div>
+
+  <div>
+    {
+      videos.map((vid) => (
+        <Video
+          title={vid.title}
+          youtube_url={vid.youtube_url}
+          hosted_video_url={vid.hosted_video_url}
+          description={vid.description}
+        />
+      ))
+    }
+  </div>
+  <div class="relative flex z-30 bg-red -mb-4 p-4 mix-blend-difference">
+    <div>
+      <a
+        class="flex text-white font-mono justify-center items-center text-8xl hover:text-[#cc4e5c] transition-colors duration-300"
+        href="/">BACK HOME</a
+      >
+    </div>
+  </div>
+</Layout>
 
 <script>
   // Check if the window object is defined to run the script

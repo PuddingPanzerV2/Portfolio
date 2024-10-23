@@ -1,4 +1,5 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import Video from "../components/Video.astro";
 
 const videos = [
@@ -7,190 +8,187 @@ const videos = [
     youtube_url: "/",
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Niesen%20vogel%201080p.mp4",
-    description: "DE SCHEISS UNDEDRA MACHTS HOMEBUTTONBLENDING KAPUTT",
+    description:
+      "These are some moments I recorded while I was on the Niesen mountain to record a timelapse of the sunset from the peak.",
   },
   {
     title: "COLIDING",
     youtube_url: "/",
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/nightlapse%20sigriswil%20b%C3%A4nklispot.mp4",
-    description: "DE SCHEISS UNDEDRA MACHTS HOMEBUTTONBLENDING KAPUTT",
+    description:
+      "In this video I just experimented around with random footage I took while walking around at dawn/night in Sigriswil.",
   },
   {
     title: "VOLTRON NEVERA",
     youtube_url: "https://www.youtube.com/shorts/lXSX3ziK4vI",
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/VOLTRON%201.mp4",
-    description: "DE SCHEISS UNDEDRA MACHTS HOMEBUTTONBLENDING KAPUTT",
+    description:
+      "After I rode the new coaster at Europa-Park on its opening weekend, I was baffled by how amazing a coaster can be. I instantly fell in love with it and fell down a rabbit hole of coaster science the following days. I've watched all the existing documentaries about it to then proceed to watch all other documentaries about rollercoasters and how they are made. I think it should be clear by now how amazed I was by this coaster, and it's in my nature to make a video about things like this. Unfortunately, I only had my phone as a camera with me, but I tried to make the best of it.",
   },
   {
     title: "47 33 38.16N 7 35 26.16E",
     youtube_url: "https://www.youtube.com/watch?v=w_HUjOIoYSU&vq=hd2160",
     hosted_video_url:
       "https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/47%2033%2038.16N%207%2035%2026.16E.webm",
-    description: "SAMPLE TEGSCHT",
+    description:
+      "The title of this video are the coordinates of Basel where I recorded the footage for this video on my phone as I walked home to the train station at 8 a.m. after a night out raving with my friends. Back at home I've imported the footage into Adobe After Effects and changed some settings to achieve a nice contrasty black and white color correction. Then I've made an alternative version with the blacks and whites switched and some other minor changes. Next, I needed to determine the BPM of the song I chose for this project, then write a small JavaScript code to switch between the two alternative versions of my color corrections at every beat. After having everything working in sync, I started to manipulate individual pixels based on their color values with the Omino Diffusion Plugin. I've made this for every clip individually and worked a lot with keyframes to have dynamic distortions which I could control. The control was needed to manually sync up my footage even further to more complex parts than just the 4 on the floor beat which I've automated already. I wanted to make a video for this song for a long time as it was one of my favorite techno songs since it came out in 2016. All of my videos really only make sense with music on, but this one really only makes sense when watched with music on. So feel free to click on the video above to get to the video with sound and have fun.",
   },
 ];
 ---
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+<Layout title="EXPERIMENTAL">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-  .sticky-nav {
-    position: absolute;
-    top: 20vh;
-    width: 100%;
-    z-index: 50;
-    background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
-    color: white;
-    padding: 0rem;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      box-shadow 0.3s ease,
-      border-bottom 0.3s ease; /* Transition for shadow and border */
-  }
+    .sticky-nav {
+      position: absolute;
+      top: 20vh;
+      width: 100%;
+      z-index: 50;
+      background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
+      color: white;
+      padding: 0rem;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        border-bottom 0.3s ease; /* Transition for shadow and border */
+    }
 
-  .sticky-nav.sticky {
-    position: fixed;
-    top: 0;
-    background-color: white; /* Change to white when sticky */
-    color: black; /* Text color change for visibility */
-    border-bottom: 3px solid black; /* Thicker black border at the bottom */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
-  }
+    .sticky-nav.sticky {
+      position: fixed;
+      top: 0;
+      background-color: white; /* Change to white when sticky */
+      color: black; /* Text color change for visibility */
+      border-bottom: 3px solid black; /* Thicker black border at the bottom */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
+    }
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 6rem;
-    padding: 10px;
-    line-height: 1;
-    margin: 6px;
-    flex-direction: column; /* Stacks the text vertically */
-  }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 6rem;
+      padding: 10px;
+      line-height: 1;
+      margin: 6px;
+      flex-direction: column; /* Stacks the text vertically */
+    }
 
-  .nav-item a {
-    color: inherit;
-    transition: color 0.3s ease;
-    text-align: center;
-    line-height: 1.1; /* Adjust the spacing between lines when they stack */
-  }
-  /* Change color on hover */
-  .nav-item:hover a {
-    color: #cc4e5c;
-    /* Set the desired hover color */
-  }
+    .nav-item a {
+      color: inherit;
+      transition: color 0.3s ease;
+      text-align: center;
+      line-height: 1.1; /* Adjust the spacing between lines when they stack */
+    }
+    /* Change color on hover */
+    .nav-item:hover a {
+      color: #cc4e5c;
+      /* Set the desired hover color */
+    }
 
-  /* Style for "My Work" title */
-  .my-work-title {
-    position: absolute;
-    top: 12vh; /* Move the title down by 20% of the viewport */
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    z-index: 40;
-  }
+    /* Style for "My Work" title */
+    .my-work-title {
+      position: absolute;
+      top: 12vh; /* Move the title down by 20% of the viewport */
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      z-index: 40;
+    }
 
-  /* Custom text size for title */
-  .text-custom-size {
-    white-space: nowrap; /* Prevent text from wrapping */
-    font-size: 14rem; /* Set a fixed font size */
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Center alignment */
-    top: 5vh; /* Move the title down by 10% of the viewport height */
-    position: relative; /* Relative positioning to allow top adjustment */
-  }
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    /* Custom text size for title */
+    .text-custom-size {
+      white-space: nowrap; /* Prevent text from wrapping */
+      font-size: 14rem; /* Set a fixed font size */
+      text-align: center; /* Center the text */
+      margin: 0 auto; /* Center alignment */
+      top: 5vh; /* Move the title down by 10% of the viewport height */
+      position: relative; /* Relative positioning to allow top adjustment */
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .z-[100] {
-    position: relative;
-    z-index: 100; /* High z-index to ensure visibility */
-  }
-  .custom-line-height {
-    line-height: 0.8; /* Adjust the value as needed */
-  }
-</style>
+    .z-[100] {
+      position: relative;
+      z-index: 100; /* High z-index to ensure visibility */
+    }
+    .custom-line-height {
+      line-height: 0.8; /* Adjust the value as needed */
+    }
+  </style>
 
-<!-- New "My Work" title -->
-<h2 class="my-work-title">MY WORK</h2>
+  <!-- New "My Work" title -->
+  <h2 class="my-work-title">MY WORK</h2>
 
-<nav class="sticky-nav">
-  <ul class="flex justify-between items-center w-full">
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/CALMNESS">CALMNESS</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/DESTRUCTION">DESTRUCTION</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/3D-ANIMATIONS-AND-VISUALS">
-        <span>3D ANIMATIONS</span>
-        <span>& VISUALS</span>
-      </a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/MADE-ON-AND-WITH-THE-PHONE">
-        <span>MADE WITH &</span>
-        <span>ON THE PHONE</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="sticky-nav">
+    <ul class="flex justify-between items-center w-full">
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/CALMNESS">CALMNESS</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/DESTRUCTION">DESTRUCTION</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/3D-ANIMATIONS-AND-VISUALS">
+          <span>3D ANIMATIONS</span>
+          <span>& VISUALS</span>
+        </a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/MADE-ON-AND-WITH-THE-PHONE">
+          <span>MADE WITH &</span>
+          <span>ON THE PHONE</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-<div class="relative h-[90vh] w-full flex justify-center items-center">
-  <video
-    class="fixed top-0 left-0 w-full h-full object-cover z-10"
-    autoplay
-    muted
-    loop
-  >
-    <source
-      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Niesen%20vogel%201080p.mp4"
-      type="video/mp4"
-    />
-  </video>
-  <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
-  <h1
-    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size custom-line-height"
-    id="title"
-  >
-    MADE WITH & <br />
-    ON THE PHONE
-  </h1>
-</div>
-
-<div>
-  {
-    videos.map((vid) => (
-      <Video
-        title={vid.title}
-        youtube_url={vid.youtube_url}
-        hosted_video_url={vid.hosted_video_url}
-        description={vid.description}
+  <div class="relative h-[90vh] w-full flex justify-center items-center">
+    <video
+      class="fixed top-0 left-0 w-full h-full object-cover z-10"
+      autoplay
+      muted
+      loop
+    >
+      <source
+        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/Niesen%20vogel%201080p.mp4"
+        type="video/mp4"
       />
-    ))
-  }
-</div>
-<div class="relative z-30" ">
-  <div class="pl-2">
-    <p class="text-gray-700 text-6xl italic font-black mt-2">
-      LAST PRIORITY // I'M SORRY
-    </p>
-    <p class="text-gray-700 text-2xl pl-3">
-      MORE CONTENT <span class="text-[#cc4e5c] font-bold">COMING SOON</span>
-    </p>
+    </video>
+    <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
+    <h1
+      class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size custom-line-height"
+      id="title"
+    >
+      MADE WITH & <br />
+      ON THE PHONE
+    </h1>
   </div>
+
+  <div>
+    {
+      videos.map((vid) => (
+        <Video
+          title={vid.title}
+          youtube_url={vid.youtube_url}
+          hosted_video_url={vid.hosted_video_url}
+          description={vid.description}
+        />
+      ))
+    }
+  </div>
+
   <div class="relative flex z-40 bg-red -mb-4 p-4 mix-blend-difference">
     <div>
       <a
@@ -199,42 +197,42 @@ const videos = [
       >
     </div>
   </div>
+</Layout>
 
-  <script>
-    // Check if the window object is defined to run the script
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".sticky-nav");
-        const stickyOffset = window.innerHeight * 0.25;
+<script>
+  // Check if the window object is defined to run the script
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".sticky-nav");
+      const stickyOffset = window.innerHeight * 0.25;
 
-        if (window.scrollY >= stickyOffset) {
-          navbar.classList.add("sticky");
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      });
+      if (window.scrollY >= stickyOffset) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    });
 
-      const title = document.getElementById("title");
-      const updateTitleSize = () => {
-        const maxFontSize = 14; // Maximum font size in rem
-        const minMargin = 20; // Minimum margin in pixels
-        const availableWidth = window.innerWidth - 2 * minMargin; // Calculate available width with minimum margin
+    const title = document.getElementById("title");
+    const updateTitleSize = () => {
+      const maxFontSize = 14; // Maximum font size in rem
+      const minMargin = 20; // Minimum margin in pixels
+      const availableWidth = window.innerWidth - 2 * minMargin; // Calculate available width with minimum margin
+      title.style.fontSize = maxFontSize + "rem";
+      const actualWidth = title.scrollWidth;
+
+      // If the title exceeds available width, scale it down
+      if (actualWidth > availableWidth) {
+        const scaleFactor = availableWidth / actualWidth;
+        title.style.fontSize = maxFontSize * scaleFactor + "rem";
+      } else {
+        // Ensure title is at max size if it fits
         title.style.fontSize = maxFontSize + "rem";
-        const actualWidth = title.scrollWidth;
+      }
+    };
 
-        // If the title exceeds available width, scale it down
-        if (actualWidth > availableWidth) {
-          const scaleFactor = availableWidth / actualWidth;
-          title.style.fontSize = maxFontSize * scaleFactor + "rem";
-        } else {
-          // Ensure title is at max size if it fits
-          title.style.fontSize = maxFontSize + "rem";
-        }
-      };
-
-      window.addEventListener("resize", updateTitleSize);
-      window.addEventListener("load", updateTitleSize);
-      updateTitleSize();
-    }
-  </script>
-</div>
+    window.addEventListener("resize", updateTitleSize);
+    window.addEventListener("load", updateTitleSize);
+    updateTitleSize();
+  }
+</script>
