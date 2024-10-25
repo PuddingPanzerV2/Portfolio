@@ -1,247 +1,317 @@
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+---
+import Layout from "../layouts/Layout.astro";
+const instagramIconUrl =
+  "https://pub-08cc515413014a4699480e6e3798434a.r2.dev/instagram-144.png";
+const YTIconUrl =
+  "https://pub-08cc515413014a4699480e6e3798434a.r2.dev/oldyoutube-logo-144.png";
+---
 
-  .sticky-nav {
-    position: absolute;
-    top: 20vh;
-    width: 100%;
-    z-index: 50;
-    background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
-    color: white;
-    padding: 0rem;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      box-shadow 0.3s ease,
-      border-bottom 0.3s ease; /* Transition for shadow and border */
-  }
+<Layout title="HOME">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-  .sticky-nav.sticky {
-    position: fixed;
-    top: 0;
-    background-color: white; /* Change to white when sticky */
-    color: black; /* Text color change for visibility */
-    border-bottom: 3px solid black; /* Thicker black border at the bottom */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
-  }
+    .sticky-nav {
+      position: absolute;
+      top: 20vh;
+      width: 100%;
+      z-index: 50;
+      background-color: #2d3748 opacity-0; /* Tailwind bg-gray-800 */
+      color: white;
+      padding: 0rem;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        border-bottom 0.3s ease; /* Transition for shadow and border */
+    }
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 6rem;
-    padding: 10px;
-    line-height: 1;
-    margin: 6px;
-    flex-direction: column; /* Stacks the text vertically */
-  }
+    .sticky-nav.sticky {
+      position: fixed;
+      top: 0;
+      background-color: white; /* Change to white when sticky */
+      color: black; /* Text color change for visibility */
+      border-bottom: 3px solid black; /* Thicker black border at the bottom */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More intense shadow */
+    }
 
-  .nav-item a {
-    color: inherit;
-    transition: color 0.3s ease;
-    text-align: center;
-    line-height: 1.1; /* Adjust the spacing between lines when they stack */
-  }
-  /* Change color on hover */
-  .nav-item:hover a {
-    color: #cc4e5c;
-    /* Set the desired hover color */
-  }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 6rem;
+      padding: 10px;
+      line-height: 1;
+      margin: 6px;
+      flex-direction: column; /* Stacks the text vertically */
+    }
 
-  /* Style for "My Work" title */
-  .my-work-title {
-    position: absolute;
-    top: 12vh; /* Move the title down by 20% of the viewport */
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    z-index: 40;
-  }
+    .nav-item a {
+      color: inherit;
+      transition: color 0.3s ease;
+      text-align: center;
+      line-height: 1.1; /* Adjust the spacing between lines when they stack */
+    }
+    /* Change color on hover */
+    .nav-item:hover a {
+      color: #cc4e5c;
+      /* Set the desired hover color */
+    }
 
-  /* Custom text size for title */
-  .text-custom-size {
-    white-space: nowrap; /* Prevent text from wrapping */
-    font-size: 14rem; /* Set a fixed font size */
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Center alignment */
-    top: 5vh; /* Move the title down by 10% of the viewport height */
-    position: relative; /* Relative positioning to allow top adjustment */
-  }
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    /* Style for "My Work" title */
+    .my-work-title {
+      position: absolute;
+      top: 12vh; /* Move the title down by 20% of the viewport */
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      z-index: 40;
+    }
 
-  .z-[100] {
-    position: relative;
-    z-index: 100; /* High z-index to ensure visibility */
-  }
-</style>
+    /* Custom text size for title */
+    .text-custom-size {
+      white-space: nowrap; /* Prevent text from wrapping */
+      font-size: 14rem; /* Set a fixed font size */
+      text-align: center; /* Center the text */
+      margin: 0 auto; /* Center alignment */
+      top: 5vh; /* Move the title down by 10% of the viewport height */
+      position: relative; /* Relative positioning to allow top adjustment */
+    }
+    .text-custom-size-social {
+      white-space: nowrap; /* Prevent text from wrapping */
+      font-size: 8rem; /* Set a fixed font size */
+      text-align: center; /* Center the text */
+      margin: 0 auto; /* Center alignment */
 
-<!-- New "My Work" title -->
-<h2 class="my-work-title">MY WORK</h2>
+      position: relative; /* Relative positioning to allow top adjustment */
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-<nav class="sticky-nav">
-  <ul class="flex justify-between items-center w-full">
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/CALMNESS">CALMNESS</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/DESTRUCTION">DESTRUCTION</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/3D-ANIMATIONS-AND-VISUALS">
-        <span>3D ANIMATIONS</span>
-        <span>& VISUALS</span>
-      </a>
-    </li>
-    <li class="nav-item font-bold text-2xl flex-1">
-      <a href="/MADE-ON-AND-WITH-THE-PHONE">
-        <span>MADE WITH &</span>
-        <span>ON THE PHONE</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+    .z-[100] {
+      position: relative;
+      z-index: 100; /* High z-index to ensure visibility */
+    }
+  </style>
 
-<div class="relative h-[90vh] w-full flex justify-center items-center">
-  <video
-    class="fixed top-0 left-0 w-full h-full object-cover z-10"
-    autoplay
-    muted
-    loop
-  >
-    <source
-      src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/gears%20fertig%20ohni%20text%20aber%20k%C3%B6rnig.mp4"
-      type="video/mp4"
-    />
-  </video>
-  <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
-  <h1
-    class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
-    id="title"
-  >
-    INSANE BRAIN
-  </h1>
-</div>
+  <!-- New "My Work" title -->
+  <h2 class="my-work-title">MY WORK</h2>
 
-<div class="relative flex flex-col z-30" style="top: -8vh">
-  <div class="pl-2">
-    <!-- Section 1: What is this -->
-    <p class="text-gray-700 text-6xl italic font-black bg-white">
-      WHAT IS THIS?
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
-      Welcome to my portfolio! I've coded the entire website you're currently
-      browsing from scratch because I got frustrated with website builders not
-      giving me all the control over the design I needed. You were often stuck
-      with their templates. <br /><br />
-      Well, I coded most of it myself, but I got really big help from Samuel Van
-      Der Stappen. I wouldn't have been able to make this on my own, as I'd never
-      used HTML, CSS, or JavaScript before this project. He introduced me to web
-      coding, helped with my difficulties, and assisted me in tidying up and organizing
-      my code. <br /><br />
-      I also tried to use ChatGPT for complicated ideas or troubleshooting, but most
-      of the time it caused more issues than it helped. Still, the explanations helped
-      me understand the problems I was having and how my ideas could be realized.
-      <br /><br />
-      All in all, I've made the majority of this website myself, and I'm proud of
-      it. Technically, the website itself is part of my portfolio. Since I built
-      it myself with little experience, it might not be perfectly optimized, and
-      you may need to reload the page if some videos don't play.
-    </p>
+  <nav class="sticky-nav">
+    <ul class="flex justify-between items-center w-full">
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/CALMNESS">CALMNESS</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/DESTRUCTION">DESTRUCTION</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/EXPERIMENTAL">EXPERIMENTAL</a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/3D-ANIMATIONS-AND-VISUALS">
+          <span>3D ANIMATIONS</span>
+          <span>& VISUALS</span>
+        </a>
+      </li>
+      <li class="nav-item font-bold text-2xl flex-1">
+        <a href="/MADE-ON-AND-WITH-THE-PHONE">
+          <span>MADE WITH &</span>
+          <span>ON THE PHONE</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-    <!-- Gap between sections -->
-    <div class="pt-6"></div>
-
-    <!-- Section 2: The Portfolio -->
-    <p class="text-gray-700 text-6xl italic font-black bg-white">
-      THE PORTFOLIO
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
-      Now, onto the actual portfolio part. In this portfolio, you'll find almost
-      all of my videos made over the years. I'll try to give a good description
-      of what is actually happening in the videos and categorize them since all
-      my projects are quite different. <br /><br />
-      You'll find everything from calm nature videos to more dynamic content like
-      my drifting and mechanical videos, as well as many experimental videos that
-      are all over the place thematically.
-    </p>
-
-    <!-- Gap between sections -->
-    <div class="pt-6"></div>
-
-    <!-- Section 3: Who am I -->
-    <p class="text-gray-700 text-6xl italic font-black bg-white">WHO AM I?</p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
-      My name is Rafael Garcia-Rosa. I'm a Spanish guy born and raised in
-      Switzerland by my beautiful family. I fell in love with the concept of
-      video production the first time I saw a video. Since then, I've spent most
-      of my time, money, and energy creating all kinds of videos. <br /><br />
-      I started with a GoPro, a potato laptop, and Windows Movie Maker. After making
-      1-2 videos, I got my hands on Sony Vegas, which I loved at the time since I
-      didn't know any other software. Later, I switched to Premiere Pro and After
-      Effects. From time to time, I also create 3D animations. I started with Cinema
-      4D but switched to Blender. <br /><br />
-      I grew up watching Viva and MTV, falling in love with the music videos of that
-      era (2004-2014) and music videos in general. Later, I discovered YouTube, opening
-      up a world where anyone can show whatever they want and do it however they
-      like. I saw so many creative people and soon realized nothing was stopping
-      me from doing the same—except my knowledge. But the internet is full of information,
-      so I just started, even without knowing how to do it. When my knowledge ran
-      out, I turned to YouTube tutorials and research until the project was done.
-    </p>
-
-    <!-- Gap between sections -->
-    <div class="pt-6"></div>
-
-    <!-- Section 4: My video style -->
-    <p class="text-gray-700 text-6xl italic font-black bg-white">
-      MY VIDEO STYLE
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
-      My video style was shaped by influences from MTV and my favorite things to
-      watch on YouTube, like FPS edits, car videos (e.g., HOONIGAN), GoPro
-      footage, Cyriak, OWSLA, 3D animations, and, of course, music videos. (I
-      currently have 2,301 videos in my favorite playlist on YouTube.) <br /><br
+  <div class="relative h-[90vh] w-full flex justify-center items-center">
+    <video
+      class="fixed top-0 left-0 w-full h-full object-cover z-10"
+      autoplay
+      muted
+      loop
+    >
+      <source
+        src="https://pub-72a1e46318194326b09d8d7e598a9615.r2.dev/gears%20fertig%20ohni%20text%20aber%20k%C3%B6rnig.mp4"
+        type="video/mp4"
       />
-      I can't listen to music without imagining a video in my head. Unfortunately,
-      I can't realize most of them because I'm not rich or in Hollywood, and camera
-      gear is expensive. Plus, time is limited, and I can't do multiple things at
-      once. <br /><br />
-      I don't have a single focus, but one thing's certain: there has to be music
-      involved. I love editing because it's like blending music with moving images.
-      When the music and visuals synchronize perfectly, it feels amazing, like dancing
-      with time and space. <br /><br />
-      I listen to tons of music after finishing a shoot, or even while recording,
-      from my collection of 5,725 liked songs on SoundCloud. The song is a major
-      part of the video for me. I often reach out to the artists to ask if I can
-      use their tracks in my videos. Sadly, I don't always get a response, but since
-      I'm not making money from these projects, I hope it's okay to use them. For
-      client work, I make sure I own the rights to all the music I use, although
-      I can't always use my top choices because I simply don't get responses from
-      artists or labels.
-    </p>
-
-    <!-- Gap between sections -->
-    <div class="pt-6"></div>
-
-    <!-- Section 5: Enjoy the videos -->
-    <p class="text-gray-700 text-6xl italic font-black bg-white">
-      ENJOY THE VIDEOS!
-    </p>
-    <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
-      Well, enough about me. Go enjoy my videos up in the navigationbar at the
-      top and have fun! :)
-    </p>
+    </video>
+    <div class="absolute inset-0 z-20 bg-black opacity-30"></div>
+    <h1
+      class="absolute text-[#70a0a0] mix-blend-difference z-10 font-mono text-custom-size"
+      id="title"
+    >
+      INSANE BRAIN
+    </h1>
   </div>
-</div>
+
+  <div class="relative flex flex-col z-30" style="top: -8vh">
+    <div class="pl-2">
+      <!-- Section 1: What is this -->
+      <p class="text-gray-700 text-6xl italic font-black bg-white pl-2">
+        WHAT IS THIS?
+      </p>
+      <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
+        Welcome to my portfolio! I've coded the entire website you're currently
+        browsing from scratch because I got frustrated with website builders not
+        giving me all the control over the design I needed. You were often stuck
+        with their templates. <br /><br />
+        Well, I coded most of it myself, but I got really big help from Samuel Van
+        Der Stappen. I wouldn't have been able to make this on my own, as I'd never
+        used HTML, CSS, or JavaScript before this project. He introduced me to web
+        coding, helped with my difficulties, and assisted me in tidying up and organizing
+        my code. <br /><br />
+        I also tried to use ChatGPT for complicated ideas or troubleshooting, but
+        most of the time it caused more issues than it helped. Still, the explanations
+        helped me understand the problems I was having and how my ideas could be
+        realized.
+        <br /><br />
+        All in all, I've made the majority of this website myself, and I'm proud
+        of it. Technically, the website itself is part of my portfolio. Since I built
+        it myself with little experience, it might not be perfectly optimized, and
+        you may need to reload the page if some videos don't play.
+      </p>
+
+      <div class="pt-6"></div>
+
+      <!-- Section 4: My video style -->
+      <p class="text-gray-700 text-6xl italic font-black bg-white pl-2">
+        EARLY ACCES
+      </p>
+      <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
+        This Website isn't fully finished yet. But my most of my recent Videos
+        are integrated
+      </p>
+
+      <!-- Gap between sections -->
+      <div class="pt-6"></div>
+
+      <!-- Section 2: The Portfolio -->
+      <p class="text-gray-700 text-6xl italic font-black bg-white pl-2">
+        THE PORTFOLIO
+      </p>
+      <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
+        Now, onto the actual portfolio part. In this portfolio, you'll find
+        almost all of my videos made over the years. I'll try to give a good
+        description of what is actually happening in the videos and categorize
+        them since all my projects are quite different. <br /><br />
+        You'll find everything from calm nature videos to more dynamic content like
+        my drifting and mechanical videos, as well as many experimental videos that
+        are all over the place thematically.
+      </p>
+
+      <!-- Gap between sections -->
+      <div class="pt-6"></div>
+
+      <div class="flex items-start bg-white p-4">
+        <!-- Text section -->
+        <div class="flex-1">
+          <p class="text-gray-800 text-6xl italic font-bold">WHO AM I?</p>
+          <p class="text-gray-700 text-2xl mt-4">
+            My name is Rafael Garcia-Rosa. I'm a Spanish guy born and raised in
+            Switzerland by my beautiful family. I fell in love with the concept
+            of video production the first time I saw a video. Since then, I've
+            spent most of my time, money, and energy creating all kinds of
+            videos. <br /><br />
+            I started with a GoPro, a potato laptop, and Windows Movie Maker. After
+            making 1-2 videos, I got my hands on Sony Vegas, which I loved at the
+            time since I didn't know any other software. Later, I switched to Premiere
+            Pro and After Effects. From time to time, I also create 3D animations.
+            I started with Cinema 4D but switched to Blender. <br /><br />
+            I grew up watching Viva and MTV, falling in love with the music videos
+            of that era (2004-2014) and music videos in general. Later, I discovered
+            YouTube, opening up a world where anyone can show whatever they want
+            and do it however they like. I saw so many creative people and soon realized
+            nothing was stopping me from doing the same—except my knowledge. But
+            the internet is full of information, so I just started, even without
+            knowing how to do it. When my knowledge ran out, I turned to YouTube
+            tutorials and research until the project was done.
+          </p>
+        </div>
+
+        <!-- Image section -->
+        <div class="ml-4">
+          <img
+            src="https://pub-8bbe34b04e574ee2a1fc82560ca38806.r2.dev/Whity%202.png"
+            alt="Description of Image"
+            class="object-contain max-h-[30vh] w-auto"
+            style="align-self: flex-start;"
+          />
+        </div>
+      </div>
+
+      <!-- Gap between sections -->
+      <div class="pt-6"></div>
+
+      <!-- Section 4: My video style -->
+      <p class="text-gray-700 text-6xl italic font-black bg-white pl-2">
+        MY VIDEO STYLE
+      </p>
+      <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
+        My video style was shaped by influences from MTV and my favorite things
+        to watch on YouTube, like FPS edits, car videos (e.g., HOONIGAN), GoPro
+        footage, Cyriak, OWSLA, 3D animations, and, of course, music videos. (I
+        currently have 2,301 videos in my favorite playlist on YouTube.) <br
+        /><br />
+        I can't listen to music without imagining a video in my head. Unfortunately,
+        I can't realize most of them because I'm not rich or in Hollywood, and camera
+        gear is expensive. Plus, time is limited, and I can't do multiple things
+        at once. <br /><br />
+        I don't have a single focus, but one thing's certain: there has to be music
+        involved. I love editing because it's like blending music with moving images.
+        When the music and visuals synchronize perfectly, it feels amazing, like
+        dancing with time and space. <br /><br />
+        I listen to tons of music after finishing a shoot, or even while recording,
+        from my collection of 5,725 liked songs on SoundCloud. The song is a major
+        part of the video for me. I often reach out to the artists to ask if I can
+        use their tracks in my videos. Sadly, I don't always get a response, but
+        since I'm not making money from these projects, I hope it's okay to use them.
+        For client work, I make sure I own the rights to all the music I use, although
+        I can't always use my top choices because I simply don't get responses from
+        artists or labels.
+      </p>
+
+      <!-- Gap between sections -->
+      <div class="pt-6"></div>
+
+      <!-- Section 5: Enjoy the videos -->
+      <p class="text-gray-700 text-6xl italic font-black bg-white pl-2">
+        ENJOY THE VIDEOS!
+      </p>
+      <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
+        Well, enough about me. Go enjoy my videos up in the navigationbar at the
+        top and have fun! :)
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center justify-center">
+      <p
+        class="text-white text-custom-size-social italic font-black -mt-6 mb-4 z-50"
+      >
+        Socials
+      </p>
+      <a
+        href="https://www.instagram.com/insane_brain/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-28 h-28 cursor-pointer hover:scale-110 transition-transform duration-300 z-50"
+      >
+        <img src={instagramIconUrl} alt="Instagram" class="w-24 h-24" />
+      </a>
+      <a
+        href="https://www.youtube.com/@P.zu.dem.udding"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-28 h-28 cursor-pointer hover:scale-110 transition-transform duration-300 z-50"
+      >
+        <img src={YTIconUrl} alt="Instagram" class="w-24 h-24" />
+      </a>
+    </div>
+  </div>
+</Layout>
 
 <script>
   if (typeof window !== "undefined") {
