@@ -4,6 +4,8 @@ const instagramIconUrl =
   "https://pub-08cc515413014a4699480e6e3798434a.r2.dev/instagram-144.png";
 const YTIconUrl =
   "https://pub-08cc515413014a4699480e6e3798434a.r2.dev/oldyoutube-logo-144.png";
+const imageURL =
+  "https://pub-8bbe34b04e574ee2a1fc82560ca38806.r2.dev/Whity%202.png";
 ---
 
 <Layout title="HOME">
@@ -181,8 +183,11 @@ const YTIconUrl =
         EARLY ACCES
       </p>
       <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
-        This Website isn't fully finished yet. But my most of my recent Videos
-        are integrated
+        This Website isn't fully finished yet and some things aren't working
+        properly. But my most of my recent Videos are integrated. There is still
+        a lot missing as im still working on it. I'm not happy with the homepage
+        yet and the text isn't completed at the moment. The scaling of the
+        picture there also isn't behaving like intended.
       </p>
 
       <!-- Gap between sections -->
@@ -205,11 +210,13 @@ const YTIconUrl =
       <!-- Gap between sections -->
       <div class="pt-6"></div>
 
-      <div class="flex items-start bg-white p-4">
-        <!-- Text section -->
+      <div class="flex flex-col md:flex-row items-start bg-white pr-4">
+        <!-- Text Content -->
         <div class="flex-1">
-          <p class="text-gray-800 text-6xl italic font-bold">WHO AM I?</p>
-          <p class="text-gray-700 text-2xl mt-4">
+          <p class="text-gray-700 text-6xl italic font-black bg-white pl-2">
+            WHO AM I?
+          </p>
+          <p class="text-gray-700 text-2xl -mt-1.5 pl-3 bg-white">
             My name is Rafael Garcia-Rosa. I'm a Spanish guy born and raised in
             Switzerland by my beautiful family. I fell in love with the concept
             of video production the first time I saw a video. Since then, I've
@@ -231,13 +238,12 @@ const YTIconUrl =
           </p>
         </div>
 
-        <!-- Image section -->
-        <div class="ml-4">
+        <!-- Image Section with Desktop-Only Top Margin -->
+        <div class="flex-none md:ml-4 md:mt-8 max-h-[inherit]">
           <img
             src="https://pub-8bbe34b04e574ee2a1fc82560ca38806.r2.dev/Whity%202.png"
-            alt="Description of Image"
-            class="object-contain max-h-[30vh] w-auto"
-            style="align-self: flex-start;"
+            alt="Portfolio Image"
+            class="max-h-[80vh] md:max-h-[26vh] md:max-w-[30vw] object-cover rounded-md"
           />
         </div>
       </div>
@@ -308,46 +314,46 @@ const YTIconUrl =
       </a>
     </div>
   </div>
-</Layout>
 
-<script>
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", function () {
-      const navbar = document.querySelector(".sticky-nav");
-      const stickyOffset = window.innerHeight * 0.25;
+  <script>
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".sticky-nav");
+        const stickyOffset = window.innerHeight * 0.25;
 
-      if (window.scrollY >= stickyOffset) {
-        navbar.classList.add("sticky");
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    });
+        if (window.scrollY >= stickyOffset) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      });
 
-    const title = document.getElementById("title");
+      const title = document.getElementById("title");
 
-    const updateTitleSize = () => {
-      const maxFontSize = 14; // Maximum font size in rem
-      const minMargin = 20; // Minimum margin in pixels
+      const updateTitleSize = () => {
+        const maxFontSize = 14; // Maximum font size in rem
+        const minMargin = 20; // Minimum margin in pixels
 
-      // Calculate available width with minimum margin
-      const availableWidth = window.innerWidth - 2 * minMargin;
+        // Calculate available width with minimum margin
+        const availableWidth = window.innerWidth - 2 * minMargin;
 
-      // Calculate the actual width the title takes at max font size
-      title.style.fontSize = maxFontSize + "rem";
-      const actualWidth = title.scrollWidth;
-
-      if (actualWidth > availableWidth) {
-        // If the title exceeds available width, scale it down
-        const scaleFactor = availableWidth / actualWidth;
-        title.style.fontSize = maxFontSize * scaleFactor + "rem";
-      } else {
-        // Ensure title is at max size if it fits
+        // Calculate the actual width the title takes at max font size
         title.style.fontSize = maxFontSize + "rem";
-      }
-    };
+        const actualWidth = title.scrollWidth;
 
-    window.addEventListener("resize", updateTitleSize);
-    window.addEventListener("load", updateTitleSize);
-    updateTitleSize();
-  }
-</script>
+        if (actualWidth > availableWidth) {
+          // If the title exceeds available width, scale it down
+          const scaleFactor = availableWidth / actualWidth;
+          title.style.fontSize = maxFontSize * scaleFactor + "rem";
+        } else {
+          // Ensure title is at max size if it fits
+          title.style.fontSize = maxFontSize + "rem";
+        }
+      };
+
+      window.addEventListener("resize", updateTitleSize);
+      window.addEventListener("load", updateTitleSize);
+      updateTitleSize();
+    }
+  </script>
+</Layout>
