@@ -140,10 +140,6 @@ const videos = [
     align-items: center;
   }
 
-  .z-[100] {
-    position: relative;
-    z-index: 100; /* High z-index to ensure visibility */
-  }
   .custom-line-height {
     line-height: 0.8; /* Adjust the value as needed */
   }
@@ -207,8 +203,9 @@ const videos = [
         title={vid.title}
         youtube_url={vid.youtube_url}
         hosted_video_url={vid.hosted_video_url}
-        description={vid.description}
-      />
+      >
+        {vid.description}
+      </Video>
     ))
   }
 </div>
