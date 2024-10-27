@@ -147,11 +147,6 @@ const videos = [
       justify-content: center;
       align-items: center;
     }
-
-    .z-[100] {
-      position: relative;
-      z-index: 100; /* High z-index to ensure visibility */
-    }
   </style>
 
   <!-- New "My Work" title -->
@@ -211,8 +206,9 @@ const videos = [
           title={vid.title}
           youtube_url={vid.youtube_url}
           hosted_video_url={vid.hosted_video_url}
-          description={vid.description}
-        />
+        >
+          {vid.description}
+        </Video>
       ))
     }
   </div>
