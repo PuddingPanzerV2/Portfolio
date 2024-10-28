@@ -37,12 +37,11 @@ const { title, hosted_video_url, youtube_url } = Astro.props;
     </p>
   </div>
 
-  <!-- EHY WAS ISCH LOS. ICH BEKUMM DE SCHIESS TEXT EIF NID US DE FUCKING MITTI USE -->
   <p class="text-gray-700 text-center py-2">Click on the video to watch</p>
 
   <div class="relative z-40">
     <!-- Adjust z-index here -->
-    <div class="flex flex-col bg-white w-full">
+    <div class="flex flex-col text-3xl bg-white w-full">
       <slot />
     </div>
   </div>
